@@ -1,0 +1,156 @@
+[
+  {
+    "code": "Backquote",
+    "value": {
+      "en": "`",
+      "ru": "ё"
+    },
+    "secondValue": {
+      "en": "~",
+      "ru": "`"
+    }
+  },
+  {
+    "code": "Digit1",
+    "value": {
+      "en": "1",
+      "ru": "1"
+    },
+    "secondValue": {
+      "en": "!",
+      "ru": "!"
+    }
+  },
+  {
+    "code": "Digit2",
+    "value": {
+      "en": "2",
+      "ru": "2"
+    },
+    "secondValue": {
+      "en": "@",
+      "ru": "\""
+    }
+  },
+  {
+    "code": "Digit3",
+    "value": {
+      "en": "3",
+      "ru": "3"
+    },
+    "secondValue": {
+      "en": "#",
+      "ru": "№"
+    }
+  },
+  {
+    "code": "Digit4",
+    "value": {
+      "en": "4",
+      "ru": "4"
+    },
+    "secondValue": {
+      "en": "$",
+      "ru": ";"
+    }
+  },
+  {
+    "code": "Digit5",
+    "value": {
+      "en": "5",
+      "ru": "5"
+    },
+    "secondValue": {
+      "en": "%",
+      "ru": "%"
+    }
+  },
+  {
+    "code": "Digit6",
+    "value": {
+      "en": "6",
+      "ru": "6"
+    },
+    "secondValue": {
+      "en": "^",
+      "ru": ":"
+    }
+  },
+  {
+    "code": "Digit7",
+    "value": {
+      "en": "7",
+      "ru": "7"
+    },
+    "secondValue": {
+      "en": "&",
+      "ru": "?"
+    }
+  },
+  {
+    "code": "Digit8",
+    "value": {
+      "en": "8",
+      "ru": "8"
+    },
+    "secondValue": {
+      "en": "*",
+      "ru": "*"
+    }
+  },
+  {
+    "code": "Digit9",
+    "value": {
+      "en": "9",
+      "ru": "9"
+    },
+    "secondValue": {
+      "en": "(",
+      "ru": "("
+    }
+  },
+  {
+    "code": "Digit0",
+    "value": {
+      "en": "0",
+      "ru": "0"
+    },
+    "secondValue": {
+      "en": ")",
+      "ru": ")"
+    }
+  },
+  {
+    "code": "Minus",
+    "value": {
+      "en": "-",
+      "ru": "-"
+    },
+    "secondValue": {
+      "en": "_",
+      "ru": "_"
+    }
+  },
+  {
+    "code": "Equal",
+    "value": {
+      "en": "=",
+      "ru": "="
+    },
+    "secondValue": {
+      "en": "+",
+      "ru": "+"
+    }
+  },
+  {
+    "code": "Backspace",
+    "value": {
+      "en": "Backspace",
+      "ru": "Backspace"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  }
+]

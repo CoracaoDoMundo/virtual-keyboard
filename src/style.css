@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    font-family: 'Alumni Sans';
+    align-items: center;
+    width: 80%;
+    row-gap: 15px;
+}
+
+.textarea,
+.field {
+    width: 80%;
+}
+
+.field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px;
+    height: 255px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6%;
+    height: 45px;
+    border: .5px solid black;
+    border-radius: 5px;
+}
+
+.backspace {
+    width: 10%;
+}
