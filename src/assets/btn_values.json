@@ -152,5 +152,577 @@
       "en": "",
       "ru": ""
     }
+  },
+  {
+    "code": "Tab",
+    "value": {
+      "en": "Tab",
+      "ru": "Tab"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyQ",
+    "value": {
+      "en": "Q",
+      "ru": "Й"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyW",
+    "value": {
+      "en": "W",
+      "ru": "Ц"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyE",
+    "value": {
+      "en": "E",
+      "ru": "У"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyR",
+    "value": {
+      "en": "R",
+      "ru": "К"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyT",
+    "value": {
+      "en": "T",
+      "ru": "Е"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyY",
+    "value": {
+      "en": "Y",
+      "ru": "Н"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyU",
+    "value": {
+      "en": "U",
+      "ru": "Г"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyI",
+    "value": {
+      "en": "I",
+      "ru": "Ш"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyO",
+    "value": {
+      "en": "O",
+      "ru": "Щ"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyP",
+    "value": {
+      "en": "P",
+      "ru": "З"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "BracketLeft",
+    "value": {
+      "en": "[",
+      "ru": "Х"
+    },
+    "secondValue": {
+      "en": "{",
+      "ru": ""
+    }
+  },
+  {
+    "code": "BracketRight",
+    "value": {
+      "en": "]",
+      "ru": "Ъ"
+    },
+    "secondValue": {
+      "en": "}",
+      "ru": ""
+    }
+  },
+  {
+    "code": "Backslash",
+    "value": {
+      "en": "\\",
+      "ru": "/"
+    },
+    "secondValue": {
+      "en": "|",
+      "ru": ""
+    }
+  },
+  {
+    "code": "Delete",
+    "value": {
+      "en": "DEL",
+      "ru": "DEL"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "CapsLock",
+    "value": {
+      "en": "Caps Lock",
+      "ru": "Caps Lock"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyA",
+    "value": {
+      "en": "A",
+      "ru": "Ф"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyS",
+    "value": {
+      "en": "S",
+      "ru": "Ы"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyD",
+    "value": {
+      "en": "D",
+      "ru": "В"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyF",
+    "value": {
+      "en": "F",
+      "ru": "А"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyG",
+    "value": {
+      "en": "G",
+      "ru": "П"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyH",
+    "value": {
+      "en": "H",
+      "ru": "Р"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyJ",
+    "value": {
+      "en": "J",
+      "ru": "О"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyK",
+    "value": {
+      "en": "K",
+      "ru": "Л"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyL",
+    "value": {
+      "en": "L",
+      "ru": "Д"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "Semicolon",
+    "value": {
+      "en": ";",
+      "ru": "Ж"
+    },
+    "secondValue": {
+      "en": ":",
+      "ru": ""
+    }
+  },
+  {
+    "code": "Quote",
+    "value": {
+      "en": "'",
+      "ru": "Э"
+    },
+    "secondValue": {
+      "en": "\"",
+      "ru": ""
+    }
+  },
+  {
+    "code": "Enter",
+    "value": {
+      "en": "ENTER",
+      "ru": "ENTER"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "ShiftLeft",
+    "value": {
+      "en": "Shift",
+      "ru": "Shift"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "Backslash",
+    "value": {
+      "en": "\\",
+      "ru": "\\"
+    },
+    "secondValue": {
+      "en": "|",
+      "ru": "/"
+    }
+  },
+  {
+    "code": "KeyZ",
+    "value": {
+      "en": "Z",
+      "ru": "Я"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyX",
+    "value": {
+      "en": "X",
+      "ru": "Ч"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyC",
+    "value": {
+      "en": "C",
+      "ru": "С"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyV",
+    "value": {
+      "en": "V",
+      "ru": "М"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyB",
+    "value": {
+      "en": "B",
+      "ru": "И"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyN",
+    "value": {
+      "en": "N",
+      "ru": "Т"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "KeyM",
+    "value": {
+      "en": "M",
+      "ru": "Ь"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "Comma",
+    "value": {
+      "en": ",",
+      "ru": "Б"
+    },
+    "secondValue": {
+      "en": "<",
+      "ru": "<"
+    }
+  },
+  {
+    "code": "Period",
+    "value": {
+      "en": ".",
+      "ru": "Ю"
+    },
+    "secondValue": {
+      "en": ">",
+      "ru": ">"
+    }
+  },
+  {
+    "code": "Slash",
+    "value": {
+      "en": "/",
+      "ru": "."
+    },
+    "secondValue": {
+      "en": "?",
+      "ru": ","
+    }
+  },
+  {
+    "code": "ArrowUp",
+    "value": {
+      "en": "⇧",
+      "ru": "⇧"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "ShiftRight",
+    "value": {
+      "en": "Shift",
+      "ru": "Shift"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "Function",
+    "value": {
+      "en": "Fn",
+      "ru": "Fn"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "ControlLeft",
+    "value": {
+      "en": "Control",
+      "ru": "Control"
+    },
+    "secondValue": {
+      "en": "^",
+      "ru": "^"
+    }
+  },
+  {
+    "code": "AltLeft",
+    "value": {
+      "en": "Option",
+      "ru": "Option"
+    },
+    "secondValue": {
+      "en": "⌥",
+      "ru": "⌥"
+    }
+  },
+  {
+    "code": "ControlLeft",
+    "value": {
+      "en": "Command",
+      "ru": "Command"
+    },
+    "secondValue": {
+      "en": "⌘",
+      "ru": "⌘"
+    }
+  },
+  {
+    "code": "Space",
+    "value": {
+      "en": " ",
+      "ru": " "
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "ControlRight",
+    "value": {
+      "en": "Command",
+      "ru": "Command"
+    },
+    "secondValue": {
+      "en": "⌘",
+      "ru": "⌘"
+    }
+  },
+  {
+    "code": "AltRight",
+    "value": {
+      "en": "Option",
+      "ru": "Option"
+    },
+    "secondValue": {
+      "en": "⌥",
+      "ru": "⌥"
+    }
+  },
+  {
+    "code": "ArrowLeft",
+    "value": {
+      "en": "⇦",
+      "ru": "⇦"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "ArrowDown",
+    "value": {
+      "en": "⇩",
+      "ru": "⇩"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
+  },
+  {
+    "code": "ArrowRight",
+    "value": {
+      "en": "⇨",
+      "ru": "⇨"
+    },
+    "secondValue": {
+      "en": "",
+      "ru": ""
+    }
   }
 ]

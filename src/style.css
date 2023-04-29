@@ -1,38 +1,78 @@
 body {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    font-family: 'Alumni Sans';
-    align-items: center;
-    width: 80%;
-    row-gap: 15px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-family: 'Alumni Sans';
+  align-items: center;
+  max-width: 1024px;
+  width: 80%;
+  row-gap: 15px;
 }
 
 .textarea,
 .field {
-    width: 80%;
+  width: 80%;
 }
 
 .field {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 5px;
-    height: 255px;
-    border: 1px solid black;
-    border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  row-gap: 5px;
+  padding: 7px;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 6%;
-    height: 45px;
-    border: .5px solid black;
-    border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 6%;
+  height: 45px;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.backspace {
-    width: 10%;
+.activeBtn {
+  background: orange;
+  border: 0.5px solid orange;
+  color: white;
+}
+
+.btnSecondValue {
+  position: absolute;
+  left: 5%;
+  top: 3%;
+  font-size: 0.8em;
+}
+
+.backspace,
+.caps,
+.shift {
+  width: 15%;
+}
+
+.tab {
+  width: 8%;
+}
+
+.del {
+  width: 7%;
+}
+
+.enter {
+  width: 13%;
+}
+
+.cmnd {
+  width: 9%;
+}
+
+.space {
+  width: 35%;
 }
