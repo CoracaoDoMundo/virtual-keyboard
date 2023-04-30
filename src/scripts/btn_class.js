@@ -1,9 +1,9 @@
 export default class Btn {
-  constructor(code, /* key, */ value, secondValue) {
+  constructor(code, btnName, value, secondBtnName) {
     this.code = code;
-    // this.key = key;
+    this.btnName = btnName;
     this.value = value;
-    this.secondValue = secondValue;
+    this.secondBtnName = secondBtnName;
   }
 
   getCode() {
@@ -18,15 +18,19 @@ export default class Btn {
     this.value = value;
   }
 
+  getName() {
+    return this.btnName;
+  }
+
   getValue() {
     return this.value;
   }
 
-  setSecondValue(secondValue) {
-    this.secondValue = secondValue;
+  setSecondBtnName(secondBtnName) {
+    this.secondBtnName = secondBtnName;
   }
 
-  getSecondValue() {
-    return this.secondValue;
+  getSecondName() {
+    return this.secondBtnName;
   }
 }
