@@ -54,6 +54,7 @@ function addTextField() {
   field.classList.add('textarea');
   field.setAttribute('rows', '10');
   field.setAttribute('autofocus', '');
+  // field.disabled = 'false';
   return field;
 }
 
@@ -72,6 +73,9 @@ function createBtn(i, l) {
   el.classList.add('btn');
   el.textContent = button.getName();
   el.setAttribute('id', button.getCode());
+  if (button.getName() === 'Caps Lock' && capsLock === true) {
+    el.classList.add('activeBtn');
+  }
   elSecondValue.textContent = button.getSecondName();
   elSecondValue.classList.add('btnSecondValue');
   el.prepend(elSecondValue);
@@ -99,6 +103,13 @@ function createBtn(i, l) {
   if (el.textContent === ' ') {
     el.classList.add('space');
   }
+  // document.addEventListener('keydown', (event) => {
+  //   if (event.code === button.getCode()) {
+  //     console.log(event.code);
+  //     console.log(button.getCode());
+  //     el.classList.add('activeBtn');
+  //   }
+  // });
   return el;
 }
 
@@ -130,12 +141,19 @@ function formButtonsArr() {
 }
 
 function typeOnKeyboard(event) {
-  console.log(event.code);
+  // console.log(event.code);
   btnValues.forEach((_, i) => {
     if (event.code === btnValues[i].code && event.code === 'Backspace') {
-      field.value = field.value.slice(0, -1);
-      // ПОНЯТЬ КАК ОПРЕДЕЛИТЬ ГДЕ КАРЕТКА И ДОДЕЛАТЬ МЕТОД УДАЛЕНИЯ ПРЕДЫДУЩЕГО СИМВОЛА:
-      // } else if (event.code === btnValues[i].code && event.code === 'Delete') {
+      const x = field.selectionStart;
+      if (field.selectionStart === field.selectionEnd) {
+        // field.value = field.value.slice(0, -1);
+        // const x = field.selectionStart;
+        field.value = field.value.split('').slice(0, field.selectionStart - 1).join('') + field.value.split('').slice(field.selectionStart).join('');
+        field.selectionEnd = x - 1;
+      } else if (field.selectionStart !== field.selectionEnd) {
+        field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionEnd).join('');
+        field.selectionEnd = x;
+      }
     } else if (event.shiftKey && event.code === btnValues[i].code) {
       field.value += btnValues[i].shiftValue[lang];
     } else if (event.code === btnValues[i].code && capsLock === true) {
@@ -156,7 +174,7 @@ function changeLanguage(event) {
       document.querySelector('p').remove();
       createHeader();
       fillKeyboard();
-    } else {
+    } else if (lang === 'ru') {
       lang = 'en';
       keyboardSection.innerHTML = '';
       document.querySelector('h1').remove();
@@ -169,6 +187,7 @@ function changeLanguage(event) {
 }
 
 document.addEventListener('keydown', (event) => {
+  // console.log(event);
   const buttons = formButtonsArr();
   if (document.activeElement === field) {
     buttons.forEach((_, i) => {
@@ -184,6 +203,15 @@ document.addEventListener('keydown', (event) => {
       }
     });
     typeOnKeyboard(event);
+  } else if (document.activeElement !== field && event.code === 'ShiftLeft' && event.key === 'Control') {
+    buttons[42].classList.add('activeBtn');
+    buttons[57].classList.add('activeBtn');
+  } else if (document.activeElement !== field && event.code === 'ShiftLeft') {
+    buttons[42].classList.add('activeBtn');
+  } else if (document.activeElement !== field && event.code === 'ShiftRight') {
+    buttons[55].classList.add('activeBtn');
+  } else if (document.activeElement !== field && event.key === 'Control') {
+    buttons[57].classList.add('activeBtn');
   }
   changeLanguage(event);
 });
@@ -209,11 +237,28 @@ document.body.onmousedown = function (e) {
 
 function pushButton(event) {
   if (event.target.classList.contains('btn')) {
-    console.log(event.target.textContent);
-    field.value += event.target.textContent;
+    event.target.classList.add('activeBtn');
+    if (event.target.textContent === 'DEL') {
+      if (field.selectionStart === field.selectionEnd) {
+        const x = field.selectionStart;
+        field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionStart + 1).join('');
+        field.selectionEnd = x;
+      } else if (field.selectionStart !== field.selectionEnd) {
+        const x = field.selectionStart;
+        field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionEnd - 1).join('');
+        field.selectionEnd = x;
+      }
+    }
   }
 }
 
-document.addEventListener('click', (event) => pushButton(event));
+document.addEventListener('mousedown', (event) => pushButton(event));
+document.addEventListener('pointerdown', (event) => pushButton(event));
+document.addEventListener('mouseup', (event) => {
+  event.target.classList.remove('activeBtn');
+});
+document.addEventListener('touchend', (event) => {
+  event.target.classList.remove('activeBtn');
+});
 
 // KEYBOARD INTERFACE FUNCTIONALITY END //
