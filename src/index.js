@@ -141,25 +141,74 @@ function formButtonsArr() {
 }
 
 function typeOnKeyboard(event) {
-  // console.log(event.code);
+  const x = field.selectionStart + 1;
   btnValues.forEach((_, i) => {
     if (event.code === btnValues[i].code && event.code === 'Backspace') {
-      const x = field.selectionStart;
-      if (field.selectionStart === field.selectionEnd) {
-        // field.value = field.value.slice(0, -1);
-        // const x = field.selectionStart;
+      if (field.selectionStart === field.textLength) {
+        // console.log(1);
         field.value = field.value.split('').slice(0, field.selectionStart - 1).join('') + field.value.split('').slice(field.selectionStart).join('');
         field.selectionEnd = x - 1;
-      } else if (field.selectionStart !== field.selectionEnd) {
+      } else if (field.selectionStart !== field.textLength
+        && field.selectionStart === field.selectionEnd) {
+        // console.log(2);
+        field.value = field.value.split('').slice(0, field.selectionStart - 1).join('') + field.value.split('').slice(field.selectionStart).join('');
+        field.selectionEnd = x - 2;
+      } else if (field.selectionStart !== field.textLength
+        && field.selectionStart !== field.selectionEnd) {
         field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionEnd).join('');
-        field.selectionEnd = x;
+        field.selectionEnd = x - 1;
+      }
+    } else if (event.code === btnValues[i].code && event.code === 'Delete') {
+      if (field.selectionStart !== field.textLength
+        && field.selectionStart === field.selectionEnd) {
+        // console.log(3);
+        field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionStart + 1).join('');
+        field.selectionEnd = x - 1;
+      } else if (field.selectionStart !== field.textLength
+        && field.selectionStart !== field.selectionEnd) {
+        // console.log(4);
+        field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionEnd).join('');
+        field.selectionEnd = x - 1;
       }
     } else if (event.shiftKey && event.code === btnValues[i].code) {
-      field.value += btnValues[i].shiftValue[lang];
+      if (field.selectionEnd === field.textLength) {
+        // console.log(event.key);
+        // console.log(5);
+        field.value += btnValues[i].shiftValue[lang];
+      } else if (field.selectionEnd !== field.textLength
+        && field.selectionStart !== field.selectionEnd
+        && event.key !== 'Shift') {
+        // console.log(6);
+        field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].shiftValue[lang] + field.value.split('').slice(field.selectionEnd).join('');
+        field.selectionEnd = x;
+        // }
+      } else if (field.selectionEnd !== field.textLength
+        && field.selectionStart === field.selectionEnd && event.key !== 'Shift') {
+        // console.log(7);
+        field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].shiftValue[lang] + field.value.split('').slice(field.selectionEnd).join('');
+        field.selectionEnd = x;
+      }
     } else if (event.code === btnValues[i].code && capsLock === true) {
-      field.value += btnValues[i].value[lang].toUpperCase();
+      if (field.selectionStart === field.textLength && event.key !== 'Shift') {
+        field.value += btnValues[i].value[lang].toUpperCase();
+      } else if (field.selectionStart !== field.textLength) {
+        console.log(event.code);
+        if (event.code !== 'CapsLock') {
+          // console.log(8);
+          field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang].toUpperCase() + field.value.split('').slice(field.selectionEnd).join('');
+          field.selectionEnd = x;
+        }
+      }
     } else if (event.code === btnValues[i].code) {
-      field.value += btnValues[i].value[lang];
+      if (field.selectionStart === field.textLength) {
+        field.value += btnValues[i].value[lang];
+      } else if (field.selectionStart !== field.textLength) {
+        if (event.code !== 'CapsLock' && !event.shiftKey) {
+          // console.log(5);
+          field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang] + field.value.split('').slice(field.selectionEnd).join('');
+          field.selectionEnd = x;
+        }
+      }
     }
   });
 }
@@ -253,12 +302,12 @@ function pushButton(event) {
 }
 
 document.addEventListener('mousedown', (event) => pushButton(event));
-document.addEventListener('pointerdown', (event) => pushButton(event));
+// document.addEventListener('pointerdown', (event) => pushButton(event));
 document.addEventListener('mouseup', (event) => {
   event.target.classList.remove('activeBtn');
 });
-document.addEventListener('touchend', (event) => {
-  event.target.classList.remove('activeBtn');
-});
+// document.addEventListener('touchend', (event) => {
+//   event.target.classList.remove('activeBtn');
+// });
 
 // KEYBOARD INTERFACE FUNCTIONALITY END //
