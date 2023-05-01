@@ -179,7 +179,8 @@ function typeOnKeyboard(event) {
       backspaceBtnFunc(x);
     } else if (event.code === btnValues[i].code && event.code === 'Delete') {
       deleteBtnFunc(x);
-    } else if (event.shiftKey && event.code === btnValues[i].code) {
+    } else if (event.shiftKey
+        && event.code === btnValues[i].code) {
       shiftBtnFunc(x, i, event);
     } else if (event.code === btnValues[i].code && capsLock === true && event.code !== 'CapsLock') {
       capslockBtnFunc(x, i);
@@ -207,7 +208,9 @@ function changeLanguage(event) {
 
 document.addEventListener('keydown', (event) => {
   const buttons = formButtonsArr();
-  if (document.activeElement === field) {
+  if (document.activeElement !== field) {
+    field.focus();
+  } else if (document.activeElement === field) {
     buttons.forEach((_, i) => {
       if (event.code === buttons[i].id && event.code !== 'CapsLock') {
         buttons[i].classList.add('activeBtn');
@@ -221,15 +224,6 @@ document.addEventListener('keydown', (event) => {
       }
     });
     typeOnKeyboard(event);
-  } else if (document.activeElement !== field && event.code === 'ShiftLeft' && event.key === 'Control') {
-    buttons[42].classList.add('activeBtn');
-    buttons[57].classList.add('activeBtn');
-  } else if (document.activeElement !== field && event.code === 'ShiftLeft') {
-    buttons[42].classList.add('activeBtn');
-  } else if (document.activeElement !== field && event.code === 'ShiftRight') {
-    buttons[55].classList.add('activeBtn');
-  } else if (document.activeElement !== field && event.key === 'Control') {
-    buttons[57].classList.add('activeBtn');
   }
   changeLanguage(event);
 });
@@ -237,8 +231,13 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('keyup', (event) => {
   const buttons = formButtonsArr();
   buttons.forEach((_, i) => {
-    if (event.code === buttons[i].id && event.code !== 'CapsLock') {
-      buttons[i].classList.remove('activeBtn');
+    if (event.code !== 'CapsLock') {
+      if (capsLock === false) {
+        buttons[i].classList.remove('activeBtn');
+      } else {
+        buttons[i].classList.remove('activeBtn');
+        buttons[29].classList.toggle('activeBtn');
+      }
     }
   });
 });
@@ -254,8 +253,17 @@ document.body.onmousedown = function (e) {
 };
 
 function pushButtonOnVirtualKeyboard(event) {
-  if (event.target.classList.contains('btn') && document.activeElement === field) {
+  if (event.target.classList.contains('btn') && document.activeElement === document.body) {
+    field.focus();
+  }
+  if (event.target.classList.contains('btn')
+  && document.activeElement === field
+  && event.target.textContent !== '^Control'
+  && event.target.textContent !== '⌥Option'
+  && event.target.textContent !== '⌘Command'
+  && event.target.textContent !== 'Fn') {
     const x = field.selectionStart + 1;
+    const i = btnValues.findIndex((el) => event.target.id === el.code);
     event.target.classList.add('activeBtn');
     if (event.target.textContent === 'DEL') {
       deleteBtnFunc(x);
@@ -270,26 +278,26 @@ function pushButtonOnVirtualKeyboard(event) {
         event.target.classList.remove('activeBtn');
       }
     } else if (capsLock === true && event.target.textContent !== 'Caps Lock') {
-      const i = btnValues.findIndex((el) => event.target.id === el.code);
       capslockBtnFunc(x, i);
     } else if (event.shiftKey && event.target.textContent !== 'Caps Lock') {
-      const i = btnValues.findIndex((el) => event.target.id === el.code);
       shiftBtnFunc(x, i, event);
     } else if (capsLock !== true && event.target.textContent !== 'Caps Lock') {
-      const i = btnValues.findIndex((el) => event.target.id === el.code);
       regularBtnFunc(x, i);
     }
-    // document.addEventListener('mouseleave', () => {
-    //   if (event.target.textContent !== 'Caps Lock') {
-    //     event.target.classList.remove('activeBtn');
-    //   }
-    // });
+  } else if (event.target.classList.contains('btn')
+  && document.activeElement === field) {
+    event.target.classList.add('activeBtn');
   }
 }
 
 document.addEventListener('mousedown', (event) => pushButtonOnVirtualKeyboard(event));
 // document.addEventListener('pointerdown', (event) => pushButton(event));
 document.addEventListener('mouseup', (event) => {
+  if (event.target.textContent !== 'Caps Lock') {
+    event.target.classList.remove('activeBtn');
+  }
+});
+document.addEventListener('mouseout', (event) => {
   if (event.target.textContent !== 'Caps Lock') {
     event.target.classList.remove('activeBtn');
   }
