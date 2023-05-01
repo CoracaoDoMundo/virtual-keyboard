@@ -181,21 +181,15 @@ function changeLanguage(event) {
   if (event.ctrlKey && event.shiftKey) {
     if (lang === 'en') {
       lang = 'ru';
-      keyboardSection.innerHTML = '';
-      document.querySelector('h1').remove();
-      document.querySelector('h3').remove();
-      document.querySelector('p').remove();
-      createHeader();
-      fillKeyboard();
     } else if (lang === 'ru') {
       lang = 'en';
-      keyboardSection.innerHTML = '';
-      document.querySelector('h1').remove();
-      document.querySelector('h3').remove();
-      document.querySelector('p').remove();
-      createHeader();
-      fillKeyboard();
     }
+    keyboardSection.innerHTML = '';
+    document.querySelector('h1').remove();
+    document.querySelector('h3').remove();
+    document.querySelector('p').remove();
+    createHeader();
+    fillKeyboard();
   }
 }
 
