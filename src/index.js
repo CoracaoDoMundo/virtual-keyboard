@@ -144,71 +144,35 @@ function typeOnKeyboard(event) {
   const x = field.selectionStart + 1;
   btnValues.forEach((_, i) => {
     if (event.code === btnValues[i].code && event.code === 'Backspace') {
-      if (field.selectionStart === field.textLength) {
-        // console.log(1);
-        field.value = field.value.split('').slice(0, field.selectionStart - 1).join('') + field.value.split('').slice(field.selectionStart).join('');
-        field.selectionEnd = x - 1;
-      } else if (field.selectionStart !== field.textLength
-        && field.selectionStart === field.selectionEnd) {
-        // console.log(2);
+      if (field.selectionStart === field.selectionEnd) {
         field.value = field.value.split('').slice(0, field.selectionStart - 1).join('') + field.value.split('').slice(field.selectionStart).join('');
         field.selectionEnd = x - 2;
-      } else if (field.selectionStart !== field.textLength
-        && field.selectionStart !== field.selectionEnd) {
+      } else if (field.selectionStart !== field.selectionEnd) {
         field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionEnd).join('');
         field.selectionEnd = x - 1;
       }
     } else if (event.code === btnValues[i].code && event.code === 'Delete') {
-      if (field.selectionStart !== field.textLength
-        && field.selectionStart === field.selectionEnd) {
-        // console.log(3);
+      if (field.selectionStart === field.selectionEnd) {
         field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionStart + 1).join('');
         field.selectionEnd = x - 1;
-      } else if (field.selectionStart !== field.textLength
-        && field.selectionStart !== field.selectionEnd) {
-        // console.log(4);
+      } else if (field.selectionStart !== field.selectionEnd) {
         field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionEnd).join('');
         field.selectionEnd = x - 1;
       }
     } else if (event.shiftKey && event.code === btnValues[i].code) {
-      if (field.selectionEnd === field.textLength) {
-        // console.log(event.key);
-        // console.log(5);
-        field.value += btnValues[i].shiftValue[lang];
-      } else if (field.selectionEnd !== field.textLength
-        && field.selectionStart !== field.selectionEnd
-        && event.key !== 'Shift') {
-        // console.log(6);
+      if (field.selectionStart !== field.selectionEnd && event.key !== 'Shift') {
         field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].shiftValue[lang] + field.value.split('').slice(field.selectionEnd).join('');
         field.selectionEnd = x;
-        // }
-      } else if (field.selectionEnd !== field.textLength
-        && field.selectionStart === field.selectionEnd && event.key !== 'Shift') {
-        // console.log(7);
+      } else if (field.selectionStart === field.selectionEnd && event.key !== 'Shift') {
         field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].shiftValue[lang] + field.value.split('').slice(field.selectionEnd).join('');
         field.selectionEnd = x;
       }
-    } else if (event.code === btnValues[i].code && capsLock === true) {
-      if (field.selectionStart === field.textLength && event.key !== 'Shift') {
-        field.value += btnValues[i].value[lang].toUpperCase();
-      } else if (field.selectionStart !== field.textLength) {
-        console.log(event.code);
-        if (event.code !== 'CapsLock') {
-          // console.log(8);
-          field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang].toUpperCase() + field.value.split('').slice(field.selectionEnd).join('');
-          field.selectionEnd = x;
-        }
-      }
-    } else if (event.code === btnValues[i].code) {
-      if (field.selectionStart === field.textLength) {
-        field.value += btnValues[i].value[lang];
-      } else if (field.selectionStart !== field.textLength) {
-        if (event.code !== 'CapsLock' && !event.shiftKey) {
-          // console.log(5);
-          field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang] + field.value.split('').slice(field.selectionEnd).join('');
-          field.selectionEnd = x;
-        }
-      }
+    } else if (event.code === btnValues[i].code && capsLock === true && event.code !== 'CapsLock') {
+      field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang].toUpperCase() + field.value.split('').slice(field.selectionEnd).join('');
+      field.selectionEnd = x;
+    } else if (event.code === btnValues[i].code && event.code !== 'CapsLock' && !event.shiftKey) {
+      field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang] + field.value.split('').slice(field.selectionEnd).join('');
+      field.selectionEnd = x;
     }
   });
 }
@@ -236,7 +200,6 @@ function changeLanguage(event) {
 }
 
 document.addEventListener('keydown', (event) => {
-  // console.log(event);
   const buttons = formButtonsArr();
   if (document.activeElement === field) {
     buttons.forEach((_, i) => {
