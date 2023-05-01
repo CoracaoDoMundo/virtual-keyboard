@@ -10,11 +10,11 @@ body {
 }
 
 .textarea,
-.field {
+.keyboard {
   width: 80%;
 }
 
-.field {
+.keyboard {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

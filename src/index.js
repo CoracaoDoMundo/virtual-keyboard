@@ -8,21 +8,20 @@ import btnValues from './assets/btn_values.json';
 let lang = 'en';
 let capsLock = false;
 
-// function setLocalStorage() {
-//   localStorage.setItem('language', lang);
-// }
-// window.addEventListener('beforeunload', setLocalStorage);
+function setLocalStorage() {
+  localStorage.setItem('language', lang);
+}
+window.addEventListener('beforeunload', setLocalStorage);
 
-// function getLocalStorage() {
-//   if (localStorage.getItem('language') === 'undefined') {
-//     lang = 'en';
-//   } else {
-//     lang = localStorage.getItem('language');
-//     console.log(lang);
-//   }
-// }
+function getLocalStorage() {
+  if (localStorage.getItem('language') === 'undefined') {
+    lang = 'en';
+  } else {
+    lang = localStorage.getItem('language');
+  }
+}
 
-// window.addEventListener('load', getLocalStorage);
+window.addEventListener('load', getLocalStorage);
 
 // LOCAL STORAGE FUNCTIONALITY END //
 
@@ -58,7 +57,7 @@ function addTextField() {
 }
 
 const keyboardSection = document.createElement('div');
-keyboardSection.classList.add('field');
+keyboardSection.classList.add('keyboard');
 
 function createBtn(i, l) {
   const button = new Btn(
@@ -228,7 +227,7 @@ document.addEventListener('keydown', (event) => {
   changeLanguage(event);
 });
 
-document.addEventListener('keyup', (event) => {
+function unpushBtn(event) {
   const buttons = formButtonsArr();
   buttons.forEach((_, i) => {
     if (event.code !== 'CapsLock') {
@@ -240,7 +239,9 @@ document.addEventListener('keyup', (event) => {
       }
     }
   });
-});
+}
+
+document.addEventListener('keyup', (event) => { unpushBtn(event); });
 
 // KEYBOARD FUNCTIONALITY BY REAL KEYBOARD USING END //
 
@@ -290,20 +291,16 @@ function pushButtonOnVirtualKeyboard(event) {
   }
 }
 
-document.addEventListener('mousedown', (event) => pushButtonOnVirtualKeyboard(event));
-// document.addEventListener('pointerdown', (event) => pushButton(event));
-document.addEventListener('mouseup', (event) => {
+keyboardSection.addEventListener('mousedown', (event) => pushButtonOnVirtualKeyboard(event));
+keyboardSection.addEventListener('mouseup', (event) => {
   if (event.target.textContent !== 'Caps Lock') {
     event.target.classList.remove('activeBtn');
   }
 });
-document.addEventListener('mouseout', (event) => {
+keyboardSection.addEventListener('mouseout', (event) => {
   if (event.target.textContent !== 'Caps Lock') {
     event.target.classList.remove('activeBtn');
   }
 });
-// document.addEventListener('touchend', (event) => {
-//   event.target.classList.remove('activeBtn');
-// });
 
 // KEYBOARD INTERFACE FUNCTIONALITY END //
