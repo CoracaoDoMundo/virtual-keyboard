@@ -4,6 +4,7 @@ body {
   margin: 0 auto;
   font-family: 'Alumni Sans';
   align-items: center;
+  color: rgb(67, 37, 9);
   max-width: 1024px;
   width: 80%;
   row-gap: 15px;
@@ -14,6 +15,19 @@ body {
   width: 80%;
 }
 
+.textarea {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.527),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(img/corgi-background.c2627a58.jpeg);
+  background-position: bottom left;
+  border: 1px solid orange;
+  box-shadow: 6px 6px 8px -7px rgba(107,63,8,1);
+  border-radius: 5px;
+  outline: navajowhite;
+}
+
 .keyboard {
   display: flex;
   flex-wrap: wrap;
@@ -22,7 +36,8 @@ body {
   row-gap: 5px;
   padding: 7px;
   height: 250px;
-  border: 1px solid black;
+  border: 1px solid rgb(78, 44, 10);
+  box-shadow: 6px 6px 8px -7px rgba(107,63,8,1);
   border-radius: 5px;
 }
 
@@ -33,7 +48,8 @@ body {
   position: relative;
   width: 6%;
   height: 45px;
-  border: 0.5px solid black;
+  border: 0.1px solid orange;
+  box-shadow: 1px 1px 2px 0px rgba(107, 63, 8, 1);
   border-radius: 5px;
   cursor: pointer;
 }
@@ -41,6 +57,7 @@ body {
 .activeBtn {
   background: orange;
   border: 0.5px solid orange;
+  box-shadow: 0.3px 0.3px 1px 0px rgba(107, 63, 8, 1);
   color: white;
 }
 
@@ -77,6 +94,16 @@ body {
   width: 35%;
 }
 
+.paw {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  border: none;
+  outline: none;
+}
+
 /* alumni-sans-100 - cyrillic_latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -93,7 +120,7 @@ body {
     /* Modern Browsers */ url(fonts/alumni-sans-v16-cyrillic_latin-100.d1f07300.ttf)
       format('truetype'),
     /* Safari, Android, iOS */
-      url(icons/alumni-sans-v16-cyrillic_latin-100.55ba89c1.svg#AlumniSans) format('svg'); /* Legacy iOS */
+      url(img/icons/alumni-sans-v16-cyrillic_latin-100.55ba89c1.svg#AlumniSans) format('svg'); /* Legacy iOS */
 }
 /* alumni-sans-300 - cyrillic_latin */
 @font-face {
@@ -111,7 +138,7 @@ body {
     /* Modern Browsers */ url(fonts/alumni-sans-v16-cyrillic_latin-300.b0786a43.ttf)
       format('truetype'),
     /* Safari, Android, iOS */
-      url(icons/alumni-sans-v16-cyrillic_latin-300.e2070f4c.svg#AlumniSans) format('svg'); /* Legacy iOS */
+      url(img/icons/alumni-sans-v16-cyrillic_latin-300.e2070f4c.svg#AlumniSans) format('svg'); /* Legacy iOS */
 }
 /* alumni-sans-regular - cyrillic_latin */
 @font-face {
@@ -129,7 +156,7 @@ body {
     /* Modern Browsers */ url(fonts/alumni-sans-v16-cyrillic_latin-regular.9b9b69cb.ttf)
       format('truetype'),
     /* Safari, Android, iOS */
-      url(icons/alumni-sans-v16-cyrillic_latin-regular.cc0c7620.svg#AlumniSans)
+      url(img/icons/alumni-sans-v16-cyrillic_latin-regular.cc0c7620.svg#AlumniSans)
       format('svg'); /* Legacy iOS */
 }
 /* alumni-sans-700 - cyrillic_latin */
@@ -148,6 +175,6 @@ body {
     /* Modern Browsers */ url(fonts/alumni-sans-v16-cyrillic_latin-700.cb8b84ac.ttf)
       format('truetype'),
     /* Safari, Android, iOS */
-      url(icons/alumni-sans-v16-cyrillic_latin-700.1b31f003.svg#AlumniSans) format('svg'); /* Legacy iOS */
+      url(img/icons/alumni-sans-v16-cyrillic_latin-700.1b31f003.svg#AlumniSans) format('svg'); /* Legacy iOS */
 }
 
