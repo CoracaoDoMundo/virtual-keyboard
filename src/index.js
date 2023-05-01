@@ -8,6 +8,9 @@ import pawSvg from './assets/img/icons/paw.svg';
 
 let lang = 'en';
 let capsLock = false;
+let leftShift = false;
+let rightShift = false;
+let ctrl = false;
 
 function setLocalStorage() {
   localStorage.setItem('language', lang);
@@ -97,7 +100,14 @@ function createBtn(i, l) {
   }
   if (el.textContent === 'Shift' && i === 42) {
     el.classList.add('shift');
+    if (leftShift === true && el.id === 'ShiftLeft') {
+      el.classList.add('activeBtn');
+    }
   }
+  if (rightShift === true && el.id === 'ShiftRight') {
+    el.classList.add('activeBtn');
+  }
+  // }
   if (el.textContent === 'ENTER') {
     el.classList.add('enter');
   }
@@ -106,6 +116,9 @@ function createBtn(i, l) {
   }
   if (el.textContent === ' ') {
     el.classList.add('space');
+  }
+  if (el.textContent === '^Control' && ctrl === true) {
+    el.classList.add('activeBtn');
   }
   return el;
 }
@@ -233,6 +246,14 @@ document.addEventListener('keydown', (event) => {
           capsLock = false;
         }
       }
+      if (event.code === 'ControlLeft') {
+        ctrl = true;
+      }
+      if (event.code === 'ShiftLeft') {
+        leftShift = true;
+      } else if (event.code === 'ShiftRight') {
+        rightShift = true;
+      }
     });
     typeOnKeyboard(event);
   }
@@ -249,6 +270,15 @@ function unpushBtn(event) {
         buttons[i].classList.remove('activeBtn');
         buttons[29].classList.toggle('activeBtn');
       }
+    }
+    if (event.code === 'ShiftLeft' && leftShift === true) {
+      leftShift = false;
+    }
+    if (event.code === 'ShiftRight' && rightShift === true) {
+      rightShift = false;
+    }
+    if (event.code === 'ControlLeft' && ctrl === true) {
+      ctrl = false;
     }
   });
 }
