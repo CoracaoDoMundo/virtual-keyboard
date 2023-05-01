@@ -4,6 +4,7 @@ body {
   margin: 0 auto;
   font-family: 'Alumni Sans';
   align-items: center;
+  color: rgb(67, 37, 9);
   max-width: 1024px;
   width: 80%;
   row-gap: 15px;
@@ -14,6 +15,19 @@ body {
   width: 80%;
 }
 
+.textarea {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.527),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(./assets/img/corgi-background.jpeg);
+  background-position: bottom left;
+  border: 1px solid orange;
+  box-shadow: 6px 6px 8px -7px rgba(107,63,8,1);
+  border-radius: 5px;
+  outline: navajowhite;
+}
+
 .keyboard {
   display: flex;
   flex-wrap: wrap;
@@ -22,7 +36,8 @@ body {
   row-gap: 5px;
   padding: 7px;
   height: 250px;
-  border: 1px solid black;
+  border: 1px solid rgb(78, 44, 10);
+  box-shadow: 6px 6px 8px -7px rgba(107,63,8,1);
   border-radius: 5px;
 }
 
@@ -33,7 +48,8 @@ body {
   position: relative;
   width: 6%;
   height: 45px;
-  border: 0.5px solid black;
+  border: 0.1px solid orange;
+  box-shadow: 1px 1px 2px 0px rgba(107, 63, 8, 1);
   border-radius: 5px;
   cursor: pointer;
 }
@@ -41,6 +57,7 @@ body {
 .activeBtn {
   background: orange;
   border: 0.5px solid orange;
+  box-shadow: 0.3px 0.3px 1px 0px rgba(107, 63, 8, 1);
   color: white;
 }
 
@@ -75,4 +92,14 @@ body {
 
 .space {
   width: 35%;
+}
+
+.paw {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  border: none;
+  outline: none;
 }

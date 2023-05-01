@@ -24,12 +24,15 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: path.join('img', '[name].[contenthash:8][ext]'),
+        },
       },
       {
         test: /\.(svg|ico)$/,
         type: 'asset/resource',
         generator: {
-          filename: path.join('icons', '[name].[contenthash:8][ext]'),
+          filename: path.join('img', 'icons', '[name].[contenthash:8][ext]'),
         },
       },
       {

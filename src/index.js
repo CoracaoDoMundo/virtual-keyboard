@@ -2,6 +2,7 @@ import './style.css';
 import './assets/fonts/fonts.css';
 import Btn from './scripts/btn_class.js';
 import btnValues from './assets/btn_values.json';
+import pawSvg from './assets/img/icons/paw.svg';
 
 // LOCAL STORAGE FUNCTIONALITY START //
 
@@ -32,15 +33,20 @@ function createHeader() {
   header.style.marginBottom = '0';
   const subhead = document.createElement('h3');
   subhead.style.margin = '0';
+  const headerStrikethrough = document.createElement('span');
+  headerStrikethrough.style.textDecoration = 'line-through';
   const explLine = document.createElement('p');
   explLine.style.margin = '0';
   if (lang === 'en') {
     header.textContent = 'Virtual keyboard';
-    subhead.textContent = 'MacOS edition';
+    subhead.textContent = ' MacOS edition';
+    headerStrikethrough.textContent = 'Corgi';
     explLine.textContent = '(for change language press Ctrl+Shift)';
+    subhead.prepend(headerStrikethrough);
   } else if (lang === 'ru') {
     header.textContent = 'Виртуальная клавиатура';
-    subhead.textContent = 'Создана для системы MacOS';
+    subhead.textContent = ' Создана для системы MacOS';
+    headerStrikethrough.textContent = 'Корги';
     explLine.textContent = '(для смены языка нажмите Ctrl+Shift)';
   }
   document.body.prepend(explLine);
@@ -51,7 +57,7 @@ function createHeader() {
 function addTextField() {
   const field = document.createElement('textarea');
   field.classList.add('textarea');
-  field.setAttribute('rows', '10');
+  field.setAttribute('rows', '12');
   field.setAttribute('autofocus', '');
   return field;
 }
@@ -116,6 +122,12 @@ window.addEventListener('load', createHeader);
 
 document.body.append(addTextField());
 document.body.append(keyboardSection);
+
+const paw = document.createElement('img');
+paw.classList.add('paw');
+paw.src = pawSvg;
+paw.setAttribute('alt', ' ');
+document.body.append(paw);
 
 // CREATE A KEYBOARD END //
 
@@ -247,7 +259,7 @@ document.addEventListener('keyup', (event) => { unpushBtn(event); });
 
 // KEYBOARD INTERFACE FUNCTIONALITY START //
 
-document.body.onmousedown = function (e) {
+document.body.onmousedown = (e) => {
   if (document.activeElement === field && e.target.classList.contains('btn')) {
     e.preventDefault();
   }
