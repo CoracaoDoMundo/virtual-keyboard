@@ -107,7 +107,6 @@ function createBtn(i, l) {
   if (rightShift === true && el.id === 'ShiftRight') {
     el.classList.add('activeBtn');
   }
-  // }
   if (el.textContent === 'ENTER') {
     el.classList.add('enter');
   }
