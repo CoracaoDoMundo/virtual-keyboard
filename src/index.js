@@ -140,39 +140,59 @@ function formButtonsArr() {
   return buttons;
 }
 
+function backspaceBtnFunc(x) {
+  if (field.selectionStart === field.selectionEnd) {
+    field.value = field.value.split('').slice(0, field.selectionStart - 1).join('') + field.value.split('').slice(field.selectionStart).join('');
+    field.selectionEnd = x - 2;
+  } else if (field.selectionStart !== field.selectionEnd) {
+    field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionEnd).join('');
+    field.selectionEnd = x - 1;
+  }
+}
+
+function deleteBtnFunc(x) {
+  if (field.selectionStart === field.selectionEnd) {
+    field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionStart + 1).join('');
+    field.selectionEnd = x - 1;
+  } else if (field.selectionStart !== field.selectionEnd) {
+    field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionEnd).join('');
+    field.selectionEnd = x - 1;
+  }
+}
+
+function shiftBtnFunc(x, i, event) {
+  if (field.selectionStart !== field.selectionEnd && event.key !== 'Shift') {
+    field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].shiftValue[lang] + field.value.split('').slice(field.selectionEnd).join('');
+    field.selectionEnd = x;
+  } else if (field.selectionStart === field.selectionEnd && event.key !== 'Shift') {
+    field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].shiftValue[lang] + field.value.split('').slice(field.selectionEnd).join('');
+    field.selectionEnd = x;
+  }
+}
+
+function capslockBtnFunc(x, i) {
+  field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang].toUpperCase() + field.value.split('').slice(field.selectionEnd).join('');
+  field.selectionEnd = x;
+}
+
+function regularBtnFunc(x, i) {
+  field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang] + field.value.split('').slice(field.selectionEnd).join('');
+  field.selectionEnd = x;
+}
+
 function typeOnKeyboard(event) {
   const x = field.selectionStart + 1;
   btnValues.forEach((_, i) => {
     if (event.code === btnValues[i].code && event.code === 'Backspace') {
-      if (field.selectionStart === field.selectionEnd) {
-        field.value = field.value.split('').slice(0, field.selectionStart - 1).join('') + field.value.split('').slice(field.selectionStart).join('');
-        field.selectionEnd = x - 2;
-      } else if (field.selectionStart !== field.selectionEnd) {
-        field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionEnd).join('');
-        field.selectionEnd = x - 1;
-      }
+      backspaceBtnFunc(x);
     } else if (event.code === btnValues[i].code && event.code === 'Delete') {
-      if (field.selectionStart === field.selectionEnd) {
-        field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionStart + 1).join('');
-        field.selectionEnd = x - 1;
-      } else if (field.selectionStart !== field.selectionEnd) {
-        field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionEnd).join('');
-        field.selectionEnd = x - 1;
-      }
+      deleteBtnFunc(x);
     } else if (event.shiftKey && event.code === btnValues[i].code) {
-      if (field.selectionStart !== field.selectionEnd && event.key !== 'Shift') {
-        field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].shiftValue[lang] + field.value.split('').slice(field.selectionEnd).join('');
-        field.selectionEnd = x;
-      } else if (field.selectionStart === field.selectionEnd && event.key !== 'Shift') {
-        field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].shiftValue[lang] + field.value.split('').slice(field.selectionEnd).join('');
-        field.selectionEnd = x;
-      }
+      shiftBtnFunc(x, i, event);
     } else if (event.code === btnValues[i].code && capsLock === true && event.code !== 'CapsLock') {
-      field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang].toUpperCase() + field.value.split('').slice(field.selectionEnd).join('');
-      field.selectionEnd = x;
+      capslockBtnFunc(x, i);
     } else if (event.code === btnValues[i].code && event.code !== 'CapsLock' && !event.shiftKey) {
-      field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang] + field.value.split('').slice(field.selectionEnd).join('');
-      field.selectionEnd = x;
+      regularBtnFunc(x, i);
     }
   });
 }
@@ -243,17 +263,12 @@ document.body.onmousedown = function (e) {
 
 function pushButton(event) {
   if (event.target.classList.contains('btn')) {
+    const x = field.selectionStart + 1;
     event.target.classList.add('activeBtn');
     if (event.target.textContent === 'DEL') {
-      if (field.selectionStart === field.selectionEnd) {
-        const x = field.selectionStart;
-        field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionStart + 1).join('');
-        field.selectionEnd = x;
-      } else if (field.selectionStart !== field.selectionEnd) {
-        const x = field.selectionStart;
-        field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionEnd - 1).join('');
-        field.selectionEnd = x;
-      }
+      deleteBtnFunc(x);
+    } else if (event.target.textContent === 'Backspace') {
+      backspaceBtnFunc(x);
     }
   }
 }
