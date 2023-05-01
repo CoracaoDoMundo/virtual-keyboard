@@ -1,0 +1,153 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-family: 'Alumni Sans';
+  align-items: center;
+  max-width: 1024px;
+  width: 80%;
+  row-gap: 15px;
+}
+
+.textarea,
+.keyboard {
+  width: 80%;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  row-gap: 5px;
+  padding: 7px;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 6%;
+  height: 45px;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.activeBtn {
+  background: orange;
+  border: 0.5px solid orange;
+  color: white;
+}
+
+.btnSecondValue {
+  position: absolute;
+  left: 5%;
+  top: 3%;
+  font-size: 0.8em;
+}
+
+.backspace,
+.caps,
+.shift {
+  width: 15%;
+}
+
+.tab {
+  width: 8%;
+}
+
+.del {
+  width: 7%;
+}
+
+.enter {
+  width: 13%;
+}
+
+.cmnd {
+  width: 9%;
+}
+
+.space {
+  width: 35%;
+}
+
+/* alumni-sans-100 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Alumni Sans';
+  font-style: normal;
+  font-weight: 100;
+  src: url(d1b4ba61d9f0791aed2e.eot); /* IE9 Compat Modes */
+  src: url(d1b4ba61d9f0791aed2e.eot?#iefix)
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url(d7b41aa818fccda3896a.woff2)
+      format('woff2'),
+    /* Super Modern Browsers */ url(4c863ca466858f4ff46d.woff)
+      format('woff'),
+    /* Modern Browsers */ url(d1f07300d735e98c357c.ttf)
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url(icons/alumni-sans-v16-cyrillic_latin-100.55ba89c1.svg#AlumniSans) format('svg'); /* Legacy iOS */
+}
+/* alumni-sans-300 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Alumni Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url(93e394b08a9c64edc360.eot); /* IE9 Compat Modes */
+  src: url(93e394b08a9c64edc360.eot?#iefix)
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url(f42aa4b3dd320b490b69.woff2)
+      format('woff2'),
+    /* Super Modern Browsers */ url(fb8f24c367fe34a02a5f.woff)
+      format('woff'),
+    /* Modern Browsers */ url(b0786a43a511a1e12356.ttf)
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url(icons/alumni-sans-v16-cyrillic_latin-300.e2070f4c.svg#AlumniSans) format('svg'); /* Legacy iOS */
+}
+/* alumni-sans-regular - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Alumni Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(d0e2d8c88e51b0da9cae.eot); /* IE9 Compat Modes */
+  src: url(d0e2d8c88e51b0da9cae.eot?#iefix)
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url(3f971775af3bd80d34fd.woff2)
+      format('woff2'),
+    /* Super Modern Browsers */
+      url(de1cd2d68a04cdeab722.woff) format('woff'),
+    /* Modern Browsers */ url(9b9b69cb17688cd37d3c.ttf)
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url(icons/alumni-sans-v16-cyrillic_latin-regular.cc0c7620.svg#AlumniSans)
+      format('svg'); /* Legacy iOS */
+}
+/* alumni-sans-700 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Alumni Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(698e124dd111b9f416fa.eot); /* IE9 Compat Modes */
+  src: url(698e124dd111b9f416fa.eot?#iefix)
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url(317671c03f1a85c38752.woff2)
+      format('woff2'),
+    /* Super Modern Browsers */ url(87ca8f16fbbe88731a67.woff)
+      format('woff'),
+    /* Modern Browsers */ url(cb8b84acf147609612ae.ttf)
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url(icons/alumni-sans-v16-cyrillic_latin-700.1b31f003.svg#AlumniSans) format('svg'); /* Legacy iOS */
+}
+
