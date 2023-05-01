@@ -10,10 +10,6 @@ export default class Btn {
     return this.code;
   }
 
-  //   getKey() {
-  //     return this.key;
-  //   }
-
   setValue(value) {
     this.value = value;
   }

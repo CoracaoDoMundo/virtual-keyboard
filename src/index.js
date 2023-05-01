@@ -14,7 +14,7 @@ function setLocalStorage() {
 window.addEventListener('beforeunload', setLocalStorage);
 
 function getLocalStorage() {
-  if (localStorage.getItem('language') === 'undefined') {
+  if (localStorage.getItem('language') === 'undefined' || localStorage.getItem('language') === 'null') {
     lang = 'en';
   } else {
     lang = localStorage.getItem('language');
