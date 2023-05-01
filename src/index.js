@@ -54,7 +54,6 @@ function addTextField() {
   field.classList.add('textarea');
   field.setAttribute('rows', '10');
   field.setAttribute('autofocus', '');
-  // field.disabled = 'false';
   return field;
 }
 
@@ -103,13 +102,6 @@ function createBtn(i, l) {
   if (el.textContent === ' ') {
     el.classList.add('space');
   }
-  // document.addEventListener('keydown', (event) => {
-  //   if (event.code === button.getCode()) {
-  //     console.log(event.code);
-  //     console.log(button.getCode());
-  //     el.classList.add('activeBtn');
-  //   }
-  // });
   return el;
 }
 
@@ -261,22 +253,46 @@ document.body.onmousedown = function (e) {
   }
 };
 
-function pushButton(event) {
-  if (event.target.classList.contains('btn')) {
+function pushButtonOnVirtualKeyboard(event) {
+  if (event.target.classList.contains('btn') && document.activeElement === field) {
     const x = field.selectionStart + 1;
     event.target.classList.add('activeBtn');
     if (event.target.textContent === 'DEL') {
       deleteBtnFunc(x);
     } else if (event.target.textContent === 'Backspace') {
       backspaceBtnFunc(x);
+    } else if (event.target.textContent === 'Caps Lock') {
+      if (capsLock === false) {
+        capsLock = true;
+        event.target.classList.add('activeBtn');
+      } else {
+        capsLock = false;
+        event.target.classList.remove('activeBtn');
+      }
+    } else if (capsLock === true && event.target.textContent !== 'Caps Lock') {
+      const i = btnValues.findIndex((el) => event.target.id === el.code);
+      capslockBtnFunc(x, i);
+    } else if (event.shiftKey && event.target.textContent !== 'Caps Lock') {
+      const i = btnValues.findIndex((el) => event.target.id === el.code);
+      shiftBtnFunc(x, i, event);
+    } else if (capsLock !== true && event.target.textContent !== 'Caps Lock') {
+      const i = btnValues.findIndex((el) => event.target.id === el.code);
+      regularBtnFunc(x, i);
     }
+    // document.addEventListener('mouseleave', () => {
+    //   if (event.target.textContent !== 'Caps Lock') {
+    //     event.target.classList.remove('activeBtn');
+    //   }
+    // });
   }
 }
 
-document.addEventListener('mousedown', (event) => pushButton(event));
+document.addEventListener('mousedown', (event) => pushButtonOnVirtualKeyboard(event));
 // document.addEventListener('pointerdown', (event) => pushButton(event));
 document.addEventListener('mouseup', (event) => {
-  event.target.classList.remove('activeBtn');
+  if (event.target.textContent !== 'Caps Lock') {
+    event.target.classList.remove('activeBtn');
+  }
 });
 // document.addEventListener('touchend', (event) => {
 //   event.target.classList.remove('activeBtn');
