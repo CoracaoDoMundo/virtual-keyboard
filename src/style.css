@@ -23,7 +23,7 @@ body {
     url(./assets/img/corgi-background.jpeg);
   background-position: bottom left;
   border: 1px solid orange;
-  box-shadow: 6px 6px 8px -7px rgba(107,63,8,1);
+  box-shadow: 6px 6px 8px -7px rgba(107, 63, 8, 1);
   border-radius: 5px;
   outline: navajowhite;
 }
@@ -37,7 +37,7 @@ body {
   padding: 7px;
   height: 250px;
   border: 1px solid rgb(78, 44, 10);
-  box-shadow: 6px 6px 8px -7px rgba(107,63,8,1);
+  box-shadow: 6px 6px 8px -7px rgba(107, 63, 8, 1);
   border-radius: 5px;
 }
 
@@ -101,4 +101,19 @@ body {
   width: 15%;
   border: none;
   outline: none;
+  cursor: pointer;
+  filter: drop-shadow(2px 5px 5px rgba(107, 63, 8, 0.4));
+  animation: beat 1s infinite alternate;
+  transform-origin: center;
+}
+
+.paw:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+@keyframes beat {
+  to {
+    transform: scale(1.1);
+  }
 }

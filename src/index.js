@@ -3,6 +3,8 @@ import './assets/fonts/fonts.css';
 import Btn from './scripts/btn_class.js';
 import btnValues from './assets/btn_values.json';
 import pawSvg from './assets/img/icons/paw.svg';
+import wofSound from './assets/sounds/dog-wof.mp3';
+import keySound from './assets/sounds/key-sound.mp3';
 
 // LOCAL STORAGE FUNCTIONALITY START //
 
@@ -137,12 +139,15 @@ paw.classList.add('paw');
 paw.src = pawSvg;
 paw.setAttribute('alt', ' ');
 document.body.append(paw);
+const pawSound = new Audio(wofSound);
+paw.addEventListener('click', () => pawSound.play());
 
 // CREATE A KEYBOARD END //
 
 // KEYBOARD FUNCTIONALITY BY REAL KEYBOARD USING START //
 
 const field = document.querySelector('textarea');
+const clickSound = new Audio(keySound);
 
 field.addEventListener('keydown', (event) => event.preventDefault());
 field.addEventListener('keyup', (event) => event.preventDefault());
@@ -153,6 +158,7 @@ function formButtonsArr() {
 }
 
 function backspaceBtnFunc(x) {
+  clickSound.play();
   if (field.selectionStart === field.selectionEnd) {
     field.value = field.value.split('').slice(0, field.selectionStart - 1).join('') + field.value.split('').slice(field.selectionStart).join('');
     field.selectionEnd = x - 2;
@@ -163,6 +169,7 @@ function backspaceBtnFunc(x) {
 }
 
 function deleteBtnFunc(x) {
+  clickSound.play();
   if (field.selectionStart === field.selectionEnd) {
     field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionStart + 1).join('');
     field.selectionEnd = x - 1;
@@ -173,6 +180,7 @@ function deleteBtnFunc(x) {
 }
 
 function shiftBtnFunc(x, i, event) {
+  clickSound.play();
   if (field.selectionStart !== field.selectionEnd && event.key !== 'Shift') {
     field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].shiftValue[lang] + field.value.split('').slice(field.selectionEnd).join('');
     field.selectionEnd = x;
@@ -183,11 +191,13 @@ function shiftBtnFunc(x, i, event) {
 }
 
 function capslockBtnFunc(x, i) {
+  clickSound.play();
   field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang].toUpperCase() + field.value.split('').slice(field.selectionEnd).join('');
   field.selectionEnd = x;
 }
 
 function regularBtnFunc(x, i) {
+  clickSound.play();
   field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang] + field.value.split('').slice(field.selectionEnd).join('');
   field.selectionEnd = x;
 }
@@ -325,6 +335,7 @@ function pushButtonOnVirtualKeyboard(event) {
     }
   } else if (event.target.classList.contains('btn')
   && document.activeElement === field) {
+    clickSound.play();
     event.target.classList.add('activeBtn');
   }
 }

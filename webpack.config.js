@@ -36,6 +36,13 @@ module.exports = {
         },
       },
       {
+        test: /\.(mp3)$/,
+        type: 'asset',
+        generator: {
+          filename: path.join('sounds', '[name].[contenthash:8][ext]'),
+        },
+      },
+      {
         test: /\.html$/i,
         loader: 'html-loader',
       },
