@@ -14,14 +14,13 @@ let leftShift = false;
 let rightShift = false;
 let ctrl = false;
 
-function setLocalStorage() {
-  localStorage.setItem('language', lang);
-}
-window.addEventListener('beforeunload', setLocalStorage);
-
 function getLocalStorage() {
   const localValue = localStorage.getItem('language');
-  lang = localValue || 'en';
+  if (localValue === undefined || localValue === null) {
+    lang = 'en';
+  } else {
+    lang = localValue;
+  }
 }
 
 window.addEventListener('load', getLocalStorage);
@@ -233,6 +232,7 @@ function changeLanguage(event) {
     document.querySelector('p').remove();
     createHeader();
     fillKeyboard();
+    localStorage.setItem('language', lang);
   }
 }
 
@@ -245,6 +245,7 @@ document.addEventListener('keydown', (event) => {
       if (event.code === buttons[i].id && event.code !== 'CapsLock') {
         buttons[i].classList.add('activeBtn');
       } else if (event.code === buttons[i].id && event.code === 'CapsLock') {
+        clickSound.play();
         buttons[i].classList.toggle('activeBtn');
         if (capsLock === false) {
           capsLock = true;
@@ -302,6 +303,7 @@ document.body.onmousedown = (e) => {
 };
 
 function pushButtonOnVirtualKeyboard(event) {
+  clickSound.play();
   if (event.target.classList.contains('btn') && document.activeElement === document.body) {
     field.focus();
   }
@@ -319,6 +321,7 @@ function pushButtonOnVirtualKeyboard(event) {
     } else if (event.target.textContent === 'Backspace') {
       backspaceBtnFunc(x);
     } else if (event.target.textContent === 'Caps Lock') {
+      clickSound.play();
       if (capsLock === false) {
         capsLock = true;
         event.target.classList.add('activeBtn');
@@ -335,7 +338,6 @@ function pushButtonOnVirtualKeyboard(event) {
     }
   } else if (event.target.classList.contains('btn')
   && document.activeElement === field) {
-    clickSound.play();
     event.target.classList.add('activeBtn');
   }
 }
