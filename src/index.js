@@ -6,7 +6,7 @@ import pawSvg from './assets/img/icons/paw.svg';
 
 // LOCAL STORAGE FUNCTIONALITY START //
 
-let lang = 'en';
+let lang;
 let capsLock = false;
 let leftShift = false;
 let rightShift = false;
@@ -18,11 +18,8 @@ function setLocalStorage() {
 window.addEventListener('beforeunload', setLocalStorage);
 
 function getLocalStorage() {
-  if (localStorage.getItem('language') === 'undefined' || localStorage.getItem('language') === 'null') {
-    lang = 'en';
-  } else {
-    lang = localStorage.getItem('language');
-  }
+  const localValue = localStorage.getItem('language');
+  lang = localValue || 'en';
 }
 
 window.addEventListener('load', getLocalStorage);
