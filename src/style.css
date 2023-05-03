@@ -97,7 +97,7 @@ body {
 .paw {
   position: absolute;
   bottom: 0;
-  right: 5%;
+  left: 80%;
   width: 15%;
   border: none;
   outline: none;
@@ -108,12 +108,12 @@ body {
 }
 
 .paw:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: 0.3s;
 }
 
 @keyframes beat {
   to {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
