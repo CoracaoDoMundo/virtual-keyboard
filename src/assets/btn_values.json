@@ -1,1256 +1,1257 @@
 [
-  {
-    "code": "Backquote",
-    "btnName": {
-      "en": "§",
-      "ru": "Ё"
-    },
-    "secondBtnName": {
-      "en": "±",
-      "ru": ""
-    },
-    "value": {
-      "en": "§",
-      "ru": "ё"
-    },
-    "shiftValue": {
-      "en": "±",
-      "ru": "Ё"
-    }
-  },
-  {
-    "code": "Digit1",
-    "btnName": {
-      "en": "1",
-      "ru": "1"
-    },
-    "secondBtnName": {
-      "en": "!",
-      "ru": "!"
-    },
-    "value": {
-      "en": "1",
-      "ru": "1"
-    },
-    "shiftValue": {
-      "en": "!",
-      "ru": "!"
-    }
-  },
-  {
-    "code": "Digit2",
-    "btnName": {
-      "en": "2",
-      "ru": "2"
-    },
-    "secondBtnName": {
-      "en": "@",
-      "ru": "\""
-    },
-    "value": {
-      "en": "2",
-      "ru": "2"
-    },
-    "shiftValue": {
-      "en": "@",
-      "ru": "\""
-    }
-  },
-  {
-    "code": "Digit3",
-    "btnName": {
-      "en": "3",
-      "ru": "3"
-    },
-    "secondBtnName": {
-      "en": "#",
-      "ru": "№"
-    },
-    "value": {
-      "en": "3",
-      "ru": "3"
-    },
-    "shiftValue": {
-      "en": "#",
-      "ru": "№"
-    }
-  },
-  {
-    "code": "Digit4",
-    "btnName": {
-      "en": "4",
-      "ru": "4"
-    },
-    "secondBtnName": {
-      "en": "$",
-      "ru": ";"
-    },
-    "value": {
-      "en": "4",
-      "ru": "4"
-    },
-    "shiftValue": {
-      "en": "$",
-      "ru": ";"
-    }
-  },
-  {
-    "code": "Digit5",
-    "btnName": {
-      "en": "5",
-      "ru": "5"
-    },
-    "secondBtnName": {
-      "en": "%",
-      "ru": "%"
-    },
-    "value": {
-      "en": "5",
-      "ru": "5"
-    },
-    "shiftValue": {
-      "en": "%",
-      "ru": "%"
-    }
-  },
-  {
-    "code": "Digit6",
-    "btnName": {
-      "en": "6",
-      "ru": "6"
-    },
-    "secondBtnName": {
-      "en": "^",
-      "ru": ":"
-    },
-    "value": {
-      "en": "6",
-      "ru": "6"
-    },
-    "shiftValue": {
-      "en": "^",
-      "ru": ":"
-    }
-  },
-  {
-    "code": "Digit7",
-    "btnName": {
-      "en": "7",
-      "ru": "7"
-    },
-    "secondBtnName": {
-      "en": "&",
-      "ru": "?"
-    },
-    "value": {
-      "en": "7",
-      "ru": "7"
-    },
-    "shiftValue": {
-      "en": "&",
-      "ru": "?"
-    }
-  },
-  {
-    "code": "Digit8",
-    "btnName": {
-      "en": "8",
-      "ru": "8"
-    },
-    "secondBtnName": {
-      "en": "*",
-      "ru": "*"
-    },
-    "value": {
-      "en": "8",
-      "ru": "8"
-    },
-    "shiftValue": {
-      "en": "*",
-      "ru": "*"
-    }
-  },
-  {
-    "code": "Digit9",
-    "btnName": {
-      "en": "9",
-      "ru": "9"
-    },
-    "secondBtnName": {
-      "en": "(",
-      "ru": "("
-    },
-    "value": {
-      "en": "9",
-      "ru": "9"
-    },
-    "shiftValue": {
-      "en": "(",
-      "ru": "("
-    }
-  },
-  {
-    "code": "Digit0",
-    "btnName": {
-      "en": "0",
-      "ru": "0"
-    },
-    "secondBtnName": {
-      "en": ")",
-      "ru": ")"
-    },
-    "value": {
-      "en": "0",
-      "ru": "0"
-    },
-    "shiftValue": {
-      "en": ")",
-      "ru": ")"
-    }
-  },
-  {
-    "code": "Minus",
-    "btnName": {
-      "en": "-",
-      "ru": "-"
-    },
-    "secondBtnName": {
-      "en": "_",
-      "ru": "_"
-    },
-    "value": {
-      "en": "-",
-      "ru": "-"
-    },
-    "shiftValue": {
-      "en": "_",
-      "ru": "_"
-    }
-  },
-  {
-    "code": "Equal",
-    "btnName": {
-      "en": "=",
-      "ru": "="
-    },
-    "secondBtnName": {
-      "en": "+",
-      "ru": "+"
-    },
-    "value": {
-      "en": "=",
-      "ru": "="
-    },
-    "shiftValue": {
-      "en": "+",
-      "ru": "+"
-    }
-  },
-  {
-    "code": "Backspace",
-    "btnName": {
-      "en": "Backspace",
-      "ru": "Backspace"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "",
-      "ru": ""
-    },
-    "shiftValue": {
-      "en": "",
-      "ru": ""
-    }
-  },
-  {
-    "code": "Tab",
-    "btnName": {
-      "en": "Tab",
-      "ru": "Tab"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "\t",
-      "ru": "\t"
-    },
-    "shiftValue": {
-      "en": "",
-      "ru": ""
-    }
-  },
-  {
-    "code": "KeyQ",
-    "btnName": {
-      "en": "Q",
-      "ru": "Й"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "q",
-      "ru": "й"
-    },
-    "shiftValue": {
-      "en": "Q",
-      "ru": "Й"
-    }
-  },
-  {
-    "code": "KeyW",
-    "btnName": {
-      "en": "W",
-      "ru": "Ц"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "w",
-      "ru": "ц"
-    },
-    "shiftValue": {
-      "en": "W",
-      "ru": "Ц"
-    }
-  },
-  {
-    "code": "KeyE",
-    "btnName": {
-      "en": "E",
-      "ru": "У"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "e",
-      "ru": "у"
-    },
-    "shiftValue": {
-      "en": "E",
-      "ru": "У"
-    }
-  },
-  {
-    "code": "KeyR",
-    "btnName": {
-      "en": "R",
-      "ru": "К"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "r",
-      "ru": "к"
-    },
-    "shiftValue": {
-      "en": "R",
-      "ru": "К"
-    }
-  },
-  {
-    "code": "KeyT",
-    "btnName": {
-      "en": "T",
-      "ru": "Е"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "t",
-      "ru": "е"
-    },
-    "shiftValue": {
-      "en": "T",
-      "ru": "Е"
-    }
-  },
-  {
-    "code": "KeyY",
-    "btnName": {
-      "en": "Y",
-      "ru": "Н"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "y",
-      "ru": "н"
-    },
-    "shiftValue": {
-      "en": "Y",
-      "ru": "Н"
-    }
-  },
-  {
-    "code": "KeyU",
-    "btnName": {
-      "en": "U",
-      "ru": "Г"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "u",
-      "ru": "г"
-    },
-    "shiftValue": {
-      "en": "U",
-      "ru": "Г"
-    }
-  },
-  {
-    "code": "KeyI",
-    "btnName": {
-      "en": "I",
-      "ru": "Ш"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "i",
-      "ru": "ш"
-    },
-    "shiftValue": {
-      "en": "I",
-      "ru": "Ш"
-    }
-  },
-  {
-    "code": "KeyO",
-    "btnName": {
-      "en": "O",
-      "ru": "Щ"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "o",
-      "ru": "щ"
-    },
-    "shiftValue": {
-      "en": "O",
-      "ru": "Щ"
-    }
-  },
-  {
-    "code": "KeyP",
-    "btnName": {
-      "en": "P",
-      "ru": "З"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "p",
-      "ru": "з"
-    },
-    "shiftValue": {
-      "en": "P",
-      "ru": "З"
-    }
-  },
-  {
-    "code": "BracketLeft",
-    "btnName": {
-      "en": "[",
-      "ru": "Х"
-    },
-    "secondBtnName": {
-      "en": "[",
-      "ru": ""
-    },
-    "value": {
-      "en": "[",
-      "ru": "х"
-    },
-    "shiftValue": {
-      "en": "[",
-      "ru": "Х"
-    }
-  },
-  {
-    "code": "BracketRight",
-    "btnName": {
-      "en": "]",
-      "ru": "Ъ"
-    },
-    "secondBtnName": {
-      "en": "]",
-      "ru": ""
-    },
-    "value": {
-      "en": "]",
-      "ru": "ъ"
-    },
-    "shiftValue": {
-      "en": "]",
-      "ru": "Ъ"
-    }
-  },
-  {
-    "code": "Backslash",
-    "btnName": {
-      "en": "\\",
-      "ru": "\\"
-    },
-    "secondBtnName": {
-      "en": "|",
-      "ru": "/"
-    },
-    "value": {
-      "en": "\\",
-      "ru": "\\"
-    },
-    "shiftValue": {
-      "en": "|",
-      "ru": "/"
-    }
-  },
-  {
-    "code": "Delete",
-    "btnName": {
-      "en": "DEL",
-      "ru": "DEL"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "",
-      "ru": ""
-    },
-    "shiftValue": {
-      "en": "",
-      "ru": ""
-    }
-  },
-  {
-    "code": "CapsLock",
-    "btnName": {
-      "en": "Caps Lock",
-      "ru": "Caps Lock"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "",
-      "ru": ""
-    },
-    "shiftValue": {
-      "en": "",
-      "ru": ""
-    }
-  },
-  {
-    "code": "KeyA",
-    "btnName": {
-      "en": "A",
-      "ru": "Ф"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "a",
-      "ru": "ф"
-    },
-    "shiftValue": {
-      "en": "A",
-      "ru": "Ф"
-    }
-  },
-  {
-    "code": "KeyS",
-    "btnName": {
-      "en": "S",
-      "ru": "Ы"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "s",
-      "ru": "ы"
-    },
-    "shiftValue": {
-      "en": "S",
-      "ru": "Ы"
-    }
-  },
-  {
-    "code": "KeyD",
-    "btnName": {
-      "en": "D",
-      "ru": "В"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "d",
-      "ru": "в"
-    },
-    "shiftValue": {
-      "en": "D",
-      "ru": "В"
-    }
-  },
-  {
-    "code": "KeyF",
-    "btnName": {
-      "en": "F",
-      "ru": "А"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "f",
-      "ru": "а"
-    },
-    "shiftValue": {
-      "en": "F",
-      "ru": "А"
-    }
-  },
-  {
-    "code": "KeyG",
-    "btnName": {
-      "en": "G",
-      "ru": "П"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "g",
-      "ru": "п"
-    },
-    "shiftValue": {
-      "en": "G",
-      "ru": "П"
-    }
-  },
-  {
-    "code": "KeyH",
-    "btnName": {
-      "en": "H",
-      "ru": "Р"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "h",
-      "ru": "р"
-    },
-    "shiftValue": {
-      "en": "H",
-      "ru": "Р"
-    }
-  },
-  {
-    "code": "KeyJ",
-    "btnName": {
-      "en": "J",
-      "ru": "О"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "j",
-      "ru": "о"
-    },
-    "shiftValue": {
-      "en": "J",
-      "ru": "О"
-    }
-  },
-  {
-    "code": "KeyK",
-    "btnName": {
-      "en": "K",
-      "ru": "Л"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "k",
-      "ru": "л"
-    },
-    "shiftValue": {
-      "en": "K",
-      "ru": "Л"
-    }
-  },
-  {
-    "code": "KeyL",
-    "btnName": {
-      "en": "L",
-      "ru": "Д"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "l",
-      "ru": "д"
-    },
-    "shiftValue": {
-      "en": "L",
-      "ru": "Д"
-    }
-  },
-  {
-    "code": "Semicolon",
-    "btnName": {
-      "en": ";",
-      "ru": "Ж"
-    },
-    "secondBtnName": {
-      "en": ":",
-      "ru": ""
-    },
-    "value": {
-      "en": ";",
-      "ru": "ж"
-    },
-    "shiftValue": {
-      "en": ":",
-      "ru": "Ж"
-    }
-  },
-  {
-    "code": "Quote",
-    "btnName": {
-      "en": "'",
-      "ru": "Э"
-    },
-    "secondBtnName": {
-      "en": "\"",
-      "ru": ""
-    },
-    "value": {
-      "en": "'",
-      "ru": "э"
-    },
-    "shiftValue": {
-      "en": "\"",
-      "ru": "Э"
-    }
-  },
-  {
-    "code": "Enter",
-    "btnName": {
-      "en": "ENTER",
-      "ru": "ENTER"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "\n",
-      "ru": "\n"
-    },
-    "shiftValue": {
-      "en": "",
-      "ru": ""
-    }
-  },
-  {
-    "code": "ShiftLeft",
-    "btnName": {
-      "en": "Shift",
-      "ru": "Shift"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "",
-      "ru": ""
-    },
-    "shiftValue": {
-      "en": "",
-      "ru": ""
-    }
-  },
-  {
-    "code": "IntlBackslash",
-    "btnName": {
-      "en": "`",
-      "ru": "]"
-    },
-    "secondBtnName": {
-      "en": "~",
-      "ru": "["
-    },
-    "value": {
-      "en": "`",
-      "ru": "]"
-    },
-    "shiftValue": {
-      "en": "~",
-      "ru": "["
-    }
-  },
-  {
-    "code": "KeyZ",
-    "btnName": {
-      "en": "Z",
-      "ru": "Я"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "z",
-      "ru": "я"
-    },
-    "shiftValue": {
-      "en": "Z",
-      "ru": "Я"
-    }
-  },
-  {
-    "code": "KeyX",
-    "btnName": {
-      "en": "X",
-      "ru": "Ч"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "x",
-      "ru": "ч"
-    },
-    "shiftValue": {
-      "en": "X",
-      "ru": "Ч"
-    }
-  },
-  {
-    "code": "KeyC",
-    "btnName": {
-      "en": "C",
-      "ru": "С"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "c",
-      "ru": "с"
-    },
-    "shiftValue": {
-      "en": "C",
-      "ru": "С"
-    }
-  },
-  {
-    "code": "KeyV",
-    "btnName": {
-      "en": "V",
-      "ru": "М"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "v",
-      "ru": "м"
-    },
-    "shiftValue": {
-      "en": "V",
-      "ru": "М"
-    }
-  },
-  {
-    "code": "KeyB",
-    "btnName": {
-      "en": "B",
-      "ru": "И"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "b",
-      "ru": "и"
-    },
-    "shiftValue": {
-      "en": "B",
-      "ru": "И"
-    }
-  },
-  {
-    "code": "KeyN",
-    "btnName": {
-      "en": "N",
-      "ru": "Т"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "n",
-      "ru": "т"
-    },
-    "shiftValue": {
-      "en": "N",
-      "ru": "Т"
-    }
-  },
-  {
-    "code": "KeyM",
-    "btnName": {
-      "en": "M",
-      "ru": "Ь"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "m",
-      "ru": "ь"
-    },
-    "shiftValue": {
-      "en": "M",
-      "ru": "Ь"
-    }
-  },
-  {
-    "code": "Comma",
-    "btnName": {
-      "en": ",",
-      "ru": "Б"
-    },
-    "secondBtnName": {
-      "en": "<",
-      "ru": ""
-    },
-    "value": {
-      "en": ",",
-      "ru": "б"
-    },
-    "shiftValue": {
-      "en": "<",
-      "ru": "Б"
-    }
-  },
-  {
-    "code": "Period",
-    "btnName": {
-      "en": ".",
-      "ru": "Ю"
-    },
-    "secondBtnName": {
-      "en": ">",
-      "ru": ""
-    },
-    "value": {
-      "en": ".",
-      "ru": "ю"
-    },
-    "shiftValue": {
-      "en": ">",
-      "ru": "Ю"
-    }
-  },
-  {
-    "code": "Slash",
-    "btnName": {
-      "en": "/",
-      "ru": "."
-    },
-    "secondBtnName": {
-      "en": "?",
-      "ru": ","
-    },
-    "value": {
-      "en": "/",
-      "ru": "."
-    },
-    "shiftValue": {
-      "en": "?",
-      "ru": ","
-    }
-  },
-  {
-    "code": "ArrowUp",
-    "btnName": {
-      "en": "⇧",
-      "ru": "⇧"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "⇧",
-      "ru": "⇧"
-    },
-    "shiftValue": {
-      "en": "⇧",
-      "ru": "⇧"
-    }
-  },
-  {
-    "code": "ShiftRight",
-    "btnName": {
-      "en": "Shift",
-      "ru": "Shift"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "",
-      "ru": ""
-    },
-    "shiftValue": {
-      "en": "",
-      "ru": ""
-    }
-  },
-  {
-    "code": "Function",
-    "btnName": {
-      "en": "Fn",
-      "ru": "Fn"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "",
-      "ru": ""
-    },
-    "shiftValue": {
-      "en": "",
-      "ru": ""
-    }
-  },
-  {
-    "code": "ControlLeft",
-    "btnName": {
-      "en": "Control",
-      "ru": "Control"
-    },
-    "secondBtnName": {
-      "en": "^",
-      "ru": "^"
-    },
-    "value": {
-      "en": "",
-      "ru": ""
-    },
-    "shiftValue": {
-      "en": "",
-      "ru": ""
-    }
-  },
-  {
-    "code": "AltLeft",
-    "btnName": {
-      "en": "Option",
-      "ru": "Option"
-    },
-    "secondBtnName": {
-      "en": "⌥",
-      "ru": "⌥"
-    },
-    "value": {
-      "en": "",
-      "ru": ""
-    },
-    "shiftValue": {
-      "en": "",
-      "ru": ""
-    }
-  },
-  {
-    "code": "MetaLeft",
-    "btnName": {
-      "en": "Command",
-      "ru": "Command"
-    },
-    "secondBtnName": {
-      "en": "⌘",
-      "ru": "⌘"
-    },
-    "value": {
-      "en": "",
-      "ru": ""
-    },
-    "shiftValue": {
-      "en": "",
-      "ru": ""
-    }
-  },
-  {
-    "code": "Space",
-    "btnName": {
-      "en": " ",
-      "ru": " "
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": " ",
-      "ru": " "
-    },
-    "shiftValue": {
-      "en": " ",
-      "ru": " "
-    }
-  },
-  {
-    "code": "MetaRight",
-    "btnName": {
-      "en": "Command",
-      "ru": "Command"
-    },
-    "secondBtnName": {
-      "en": "⌘",
-      "ru": "⌘"
-    },
-    "value": {
-      "en": "",
-      "ru": ""
-    },
-    "shiftValue": {
-      "en": "",
-      "ru": ""
-    }
-  },
-  {
-    "code": "AltRight",
-    "btnName": {
-      "en": "Option",
-      "ru": "Option"
-    },
-    "secondBtnName": {
-      "en": "⌥",
-      "ru": "⌥"
-    },
-    "value": {
-      "en": "",
-      "ru": ""
-    },
-    "shiftValue": {
-      "en": "",
-      "ru": ""
-    }
-  },
-  {
-    "code": "ArrowLeft",
-    "btnName": {
-      "en": "⇦",
-      "ru": "⇦"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "⇦",
-      "ru": "⇦"
-    },
-    "shiftValue": {
-      "en": "⇦",
-      "ru": "⇦"
-    }
-  },
-  {
-    "code": "ArrowDown",
-    "btnName": {
-      "en": "⇩",
-      "ru": "⇩"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "⇩",
-      "ru": "⇩"
-    },
-    "shiftValue": {
-      "en": "⇩",
-      "ru": "⇩"
-    }
-  },
-  {
-    "code": "ArrowRight",
-    "btnName": {
-      "en": "⇨",
-      "ru": "⇨"
-    },
-    "secondBtnName": {
-      "en": "",
-      "ru": ""
-    },
-    "value": {
-      "en": "⇨",
-      "ru": "⇨"
-    },
-    "shiftValue": {
-      "en": "⇨",
-      "ru": "⇨"
-    }
-  }
-]
+    {
+      "code": "Backquote",
+      "btnName": {
+        "en": "§",
+        "ru": "ё"
+      },
+      "secondBtnName": {
+        "en": "±",
+        "ru": ""
+      },
+      "value": {
+        "en": "§",
+        "ru": "ё"
+      },
+      "shiftValue": {
+        "en": "±",
+        "ru": "Ё"
+      }
+    },
+    {
+      "code": "Digit1",
+      "btnName": {
+        "en": "1",
+        "ru": "1"
+      },
+      "secondBtnName": {
+        "en": "!",
+        "ru": "!"
+      },
+      "value": {
+        "en": "1",
+        "ru": "1"
+      },
+      "shiftValue": {
+        "en": "!",
+        "ru": "!"
+      }
+    },
+    {
+      "code": "Digit2",
+      "btnName": {
+        "en": "2",
+        "ru": "2"
+      },
+      "secondBtnName": {
+        "en": "@",
+        "ru": "\""
+      },
+      "value": {
+        "en": "2",
+        "ru": "2"
+      },
+      "shiftValue": {
+        "en": "@",
+        "ru": "\""
+      }
+    },
+    {
+      "code": "Digit3",
+      "btnName": {
+        "en": "3",
+        "ru": "3"
+      },
+      "secondBtnName": {
+        "en": "#",
+        "ru": "№"
+      },
+      "value": {
+        "en": "3",
+        "ru": "3"
+      },
+      "shiftValue": {
+        "en": "#",
+        "ru": "№"
+      }
+    },
+    {
+      "code": "Digit4",
+      "btnName": {
+        "en": "4",
+        "ru": "4"
+      },
+      "secondBtnName": {
+        "en": "$",
+        "ru": ";"
+      },
+      "value": {
+        "en": "4",
+        "ru": "4"
+      },
+      "shiftValue": {
+        "en": "$",
+        "ru": ";"
+      }
+    },
+    {
+      "code": "Digit5",
+      "btnName": {
+        "en": "5",
+        "ru": "5"
+      },
+      "secondBtnName": {
+        "en": "%",
+        "ru": "%"
+      },
+      "value": {
+        "en": "5",
+        "ru": "5"
+      },
+      "shiftValue": {
+        "en": "%",
+        "ru": "%"
+      }
+    },
+    {
+      "code": "Digit6",
+      "btnName": {
+        "en": "6",
+        "ru": "6"
+      },
+      "secondBtnName": {
+        "en": "^",
+        "ru": ":"
+      },
+      "value": {
+        "en": "6",
+        "ru": "6"
+      },
+      "shiftValue": {
+        "en": "^",
+        "ru": ":"
+      }
+    },
+    {
+      "code": "Digit7",
+      "btnName": {
+        "en": "7",
+        "ru": "7"
+      },
+      "secondBtnName": {
+        "en": "&",
+        "ru": "?"
+      },
+      "value": {
+        "en": "7",
+        "ru": "7"
+      },
+      "shiftValue": {
+        "en": "&",
+        "ru": "?"
+      }
+    },
+    {
+      "code": "Digit8",
+      "btnName": {
+        "en": "8",
+        "ru": "8"
+      },
+      "secondBtnName": {
+        "en": "*",
+        "ru": "*"
+      },
+      "value": {
+        "en": "8",
+        "ru": "8"
+      },
+      "shiftValue": {
+        "en": "*",
+        "ru": "*"
+      }
+    },
+    {
+      "code": "Digit9",
+      "btnName": {
+        "en": "9",
+        "ru": "9"
+      },
+      "secondBtnName": {
+        "en": "(",
+        "ru": "("
+      },
+      "value": {
+        "en": "9",
+        "ru": "9"
+      },
+      "shiftValue": {
+        "en": "(",
+        "ru": "("
+      }
+    },
+    {
+      "code": "Digit0",
+      "btnName": {
+        "en": "0",
+        "ru": "0"
+      },
+      "secondBtnName": {
+        "en": ")",
+        "ru": ")"
+      },
+      "value": {
+        "en": "0",
+        "ru": "0"
+      },
+      "shiftValue": {
+        "en": ")",
+        "ru": ")"
+      }
+    },
+    {
+      "code": "Minus",
+      "btnName": {
+        "en": "-",
+        "ru": "-"
+      },
+      "secondBtnName": {
+        "en": "_",
+        "ru": "_"
+      },
+      "value": {
+        "en": "-",
+        "ru": "-"
+      },
+      "shiftValue": {
+        "en": "_",
+        "ru": "_"
+      }
+    },
+    {
+      "code": "Equal",
+      "btnName": {
+        "en": "=",
+        "ru": "="
+      },
+      "secondBtnName": {
+        "en": "+",
+        "ru": "+"
+      },
+      "value": {
+        "en": "=",
+        "ru": "="
+      },
+      "shiftValue": {
+        "en": "+",
+        "ru": "+"
+      }
+    },
+    {
+      "code": "Backspace",
+      "btnName": {
+        "en": "Backspace",
+        "ru": "Backspace"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "",
+        "ru": ""
+      },
+      "shiftValue": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "code": "Tab",
+      "btnName": {
+        "en": "Tab",
+        "ru": "Tab"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "\t",
+        "ru": "\t"
+      },
+      "shiftValue": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "code": "KeyQ",
+      "btnName": {
+        "en": "q",
+        "ru": "й"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "q",
+        "ru": "й"
+      },
+      "shiftValue": {
+        "en": "Q",
+        "ru": "Й"
+      }
+    },
+    {
+      "code": "KeyW",
+      "btnName": {
+        "en": "w",
+        "ru": "ц"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "w",
+        "ru": "ц"
+      },
+      "shiftValue": {
+        "en": "W",
+        "ru": "Ц"
+      }
+    },
+    {
+      "code": "KeyE",
+      "btnName": {
+        "en": "e",
+        "ru": "у"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "e",
+        "ru": "у"
+      },
+      "shiftValue": {
+        "en": "E",
+        "ru": "У"
+      }
+    },
+    {
+      "code": "KeyR",
+      "btnName": {
+        "en": "r",
+        "ru": "к"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "r",
+        "ru": "к"
+      },
+      "shiftValue": {
+        "en": "R",
+        "ru": "К"
+      }
+    },
+    {
+      "code": "KeyT",
+      "btnName": {
+        "en": "t",
+        "ru": "е"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "t",
+        "ru": "е"
+      },
+      "shiftValue": {
+        "en": "T",
+        "ru": "Е"
+      }
+    },
+    {
+      "code": "KeyY",
+      "btnName": {
+        "en": "y",
+        "ru": "н"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "y",
+        "ru": "н"
+      },
+      "shiftValue": {
+        "en": "Y",
+        "ru": "Н"
+      }
+    },
+    {
+      "code": "KeyU",
+      "btnName": {
+        "en": "u",
+        "ru": "г"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "u",
+        "ru": "г"
+      },
+      "shiftValue": {
+        "en": "U",
+        "ru": "Г"
+      }
+    },
+    {
+      "code": "KeyI",
+      "btnName": {
+        "en": "i",
+        "ru": "ш"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "i",
+        "ru": "ш"
+      },
+      "shiftValue": {
+        "en": "I",
+        "ru": "Ш"
+      }
+    },
+    {
+      "code": "KeyO",
+      "btnName": {
+        "en": "o",
+        "ru": "щ"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "o",
+        "ru": "щ"
+      },
+      "shiftValue": {
+        "en": "O",
+        "ru": "Щ"
+      }
+    },
+    {
+      "code": "KeyP",
+      "btnName": {
+        "en": "p",
+        "ru": "з"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "p",
+        "ru": "з"
+      },
+      "shiftValue": {
+        "en": "P",
+        "ru": "З"
+      }
+    },
+    {
+      "code": "BracketLeft",
+      "btnName": {
+        "en": "[",
+        "ru": "х"
+      },
+      "secondBtnName": {
+        "en": "[",
+        "ru": ""
+      },
+      "value": {
+        "en": "[",
+        "ru": "х"
+      },
+      "shiftValue": {
+        "en": "[",
+        "ru": "Х"
+      }
+    },
+    {
+      "code": "BracketRight",
+      "btnName": {
+        "en": "]",
+        "ru": "ъ"
+      },
+      "secondBtnName": {
+        "en": "]",
+        "ru": ""
+      },
+      "value": {
+        "en": "]",
+        "ru": "ъ"
+      },
+      "shiftValue": {
+        "en": "]",
+        "ru": "Ъ"
+      }
+    },
+    {
+      "code": "Backslash",
+      "btnName": {
+        "en": "\\",
+        "ru": "\\"
+      },
+      "secondBtnName": {
+        "en": "|",
+        "ru": "/"
+      },
+      "value": {
+        "en": "\\",
+        "ru": "\\"
+      },
+      "shiftValue": {
+        "en": "|",
+        "ru": "/"
+      }
+    },
+    {
+      "code": "Delete",
+      "btnName": {
+        "en": "DEL",
+        "ru": "DEL"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "",
+        "ru": ""
+      },
+      "shiftValue": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "code": "CapsLock",
+      "btnName": {
+        "en": "Caps Lock",
+        "ru": "Caps Lock"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "",
+        "ru": ""
+      },
+      "shiftValue": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "code": "KeyA",
+      "btnName": {
+        "en": "a",
+        "ru": "ф"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "a",
+        "ru": "ф"
+      },
+      "shiftValue": {
+        "en": "A",
+        "ru": "Ф"
+      }
+    },
+    {
+      "code": "KeyS",
+      "btnName": {
+        "en": "s",
+        "ru": "ы"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "s",
+        "ru": "ы"
+      },
+      "shiftValue": {
+        "en": "S",
+        "ru": "Ы"
+      }
+    },
+    {
+      "code": "KeyD",
+      "btnName": {
+        "en": "d",
+        "ru": "в"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "d",
+        "ru": "в"
+      },
+      "shiftValue": {
+        "en": "D",
+        "ru": "В"
+      }
+    },
+    {
+      "code": "KeyF",
+      "btnName": {
+        "en": "f",
+        "ru": "а"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "f",
+        "ru": "а"
+      },
+      "shiftValue": {
+        "en": "F",
+        "ru": "А"
+      }
+    },
+    {
+      "code": "KeyG",
+      "btnName": {
+        "en": "g",
+        "ru": "п"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "g",
+        "ru": "п"
+      },
+      "shiftValue": {
+        "en": "G",
+        "ru": "П"
+      }
+    },
+    {
+      "code": "KeyH",
+      "btnName": {
+        "en": "h",
+        "ru": "р"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "h",
+        "ru": "р"
+      },
+      "shiftValue": {
+        "en": "H",
+        "ru": "Р"
+      }
+    },
+    {
+      "code": "KeyJ",
+      "btnName": {
+        "en": "j",
+        "ru": "о"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "j",
+        "ru": "о"
+      },
+      "shiftValue": {
+        "en": "J",
+        "ru": "О"
+      }
+    },
+    {
+      "code": "KeyK",
+      "btnName": {
+        "en": "k",
+        "ru": "л"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "k",
+        "ru": "л"
+      },
+      "shiftValue": {
+        "en": "K",
+        "ru": "Л"
+      }
+    },
+    {
+      "code": "KeyL",
+      "btnName": {
+        "en": "l",
+        "ru": "д"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "l",
+        "ru": "д"
+      },
+      "shiftValue": {
+        "en": "L",
+        "ru": "Д"
+      }
+    },
+    {
+      "code": "Semicolon",
+      "btnName": {
+        "en": ";",
+        "ru": "ж"
+      },
+      "secondBtnName": {
+        "en": ":",
+        "ru": ""
+      },
+      "value": {
+        "en": ";",
+        "ru": "ж"
+      },
+      "shiftValue": {
+        "en": ":",
+        "ru": "Ж"
+      }
+    },
+    {
+      "code": "Quote",
+      "btnName": {
+        "en": "'",
+        "ru": "э"
+      },
+      "secondBtnName": {
+        "en": "\"",
+        "ru": ""
+      },
+      "value": {
+        "en": "'",
+        "ru": "э"
+      },
+      "shiftValue": {
+        "en": "\"",
+        "ru": "Э"
+      }
+    },
+    {
+      "code": "Enter",
+      "btnName": {
+        "en": "ENTER",
+        "ru": "ENTER"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "\n",
+        "ru": "\n"
+      },
+      "shiftValue": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "code": "ShiftLeft",
+      "btnName": {
+        "en": "Shift",
+        "ru": "Shift"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "",
+        "ru": ""
+      },
+      "shiftValue": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "code": "IntlBackslash",
+      "btnName": {
+        "en": "`",
+        "ru": "]"
+      },
+      "secondBtnName": {
+        "en": "~",
+        "ru": "["
+      },
+      "value": {
+        "en": "`",
+        "ru": "]"
+      },
+      "shiftValue": {
+        "en": "~",
+        "ru": "["
+      }
+    },
+    {
+      "code": "KeyZ",
+      "btnName": {
+        "en": "z",
+        "ru": "я"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "z",
+        "ru": "я"
+      },
+      "shiftValue": {
+        "en": "Z",
+        "ru": "Я"
+      }
+    },
+    {
+      "code": "KeyX",
+      "btnName": {
+        "en": "x",
+        "ru": "ч"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "x",
+        "ru": "ч"
+      },
+      "shiftValue": {
+        "en": "X",
+        "ru": "Ч"
+      }
+    },
+    {
+      "code": "KeyC",
+      "btnName": {
+        "en": "c",
+        "ru": "с"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "c",
+        "ru": "с"
+      },
+      "shiftValue": {
+        "en": "C",
+        "ru": "С"
+      }
+    },
+    {
+      "code": "KeyV",
+      "btnName": {
+        "en": "v",
+        "ru": "м"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "v",
+        "ru": "м"
+      },
+      "shiftValue": {
+        "en": "V",
+        "ru": "М"
+      }
+    },
+    {
+      "code": "KeyB",
+      "btnName": {
+        "en": "b",
+        "ru": "и"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "b",
+        "ru": "и"
+      },
+      "shiftValue": {
+        "en": "B",
+        "ru": "И"
+      }
+    },
+    {
+      "code": "KeyN",
+      "btnName": {
+        "en": "n",
+        "ru": "т"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "n",
+        "ru": "т"
+      },
+      "shiftValue": {
+        "en": "N",
+        "ru": "Т"
+      }
+    },
+    {
+      "code": "KeyM",
+      "btnName": {
+        "en": "m",
+        "ru": "ь"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "m",
+        "ru": "ь"
+      },
+      "shiftValue": {
+        "en": "M",
+        "ru": "Ь"
+      }
+    },
+    {
+      "code": "Comma",
+      "btnName": {
+        "en": ",",
+        "ru": "б"
+      },
+      "secondBtnName": {
+        "en": "<",
+        "ru": ""
+      },
+      "value": {
+        "en": ",",
+        "ru": "б"
+      },
+      "shiftValue": {
+        "en": "<",
+        "ru": "Б"
+      }
+    },
+    {
+      "code": "Period",
+      "btnName": {
+        "en": ".",
+        "ru": "ю"
+      },
+      "secondBtnName": {
+        "en": ">",
+        "ru": ""
+      },
+      "value": {
+        "en": ".",
+        "ru": "ю"
+      },
+      "shiftValue": {
+        "en": ">",
+        "ru": "Ю"
+      }
+    },
+    {
+      "code": "Slash",
+      "btnName": {
+        "en": "/",
+        "ru": "."
+      },
+      "secondBtnName": {
+        "en": "?",
+        "ru": ","
+      },
+      "value": {
+        "en": "/",
+        "ru": "."
+      },
+      "shiftValue": {
+        "en": "?",
+        "ru": ","
+      }
+    },
+    {
+      "code": "ArrowUp",
+      "btnName": {
+        "en": "⇧",
+        "ru": "⇧"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "⇧",
+        "ru": "⇧"
+      },
+      "shiftValue": {
+        "en": "⇧",
+        "ru": "⇧"
+      }
+    },
+    {
+      "code": "ShiftRight",
+      "btnName": {
+        "en": "Shift",
+        "ru": "Shift"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "",
+        "ru": ""
+      },
+      "shiftValue": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "code": "Function",
+      "btnName": {
+        "en": "Fn",
+        "ru": "Fn"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "",
+        "ru": ""
+      },
+      "shiftValue": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "code": "ControlLeft",
+      "btnName": {
+        "en": "Control",
+        "ru": "Control"
+      },
+      "secondBtnName": {
+        "en": "^",
+        "ru": "^"
+      },
+      "value": {
+        "en": "",
+        "ru": ""
+      },
+      "shiftValue": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "code": "AltLeft",
+      "btnName": {
+        "en": "Option",
+        "ru": "Option"
+      },
+      "secondBtnName": {
+        "en": "⌥",
+        "ru": "⌥"
+      },
+      "value": {
+        "en": "",
+        "ru": ""
+      },
+      "shiftValue": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "code": "MetaLeft",
+      "btnName": {
+        "en": "Command",
+        "ru": "Command"
+      },
+      "secondBtnName": {
+        "en": "⌘",
+        "ru": "⌘"
+      },
+      "value": {
+        "en": "",
+        "ru": ""
+      },
+      "shiftValue": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "code": "Space",
+      "btnName": {
+        "en": " ",
+        "ru": " "
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": " ",
+        "ru": " "
+      },
+      "shiftValue": {
+        "en": " ",
+        "ru": " "
+      }
+    },
+    {
+      "code": "MetaRight",
+      "btnName": {
+        "en": "Command",
+        "ru": "Command"
+      },
+      "secondBtnName": {
+        "en": "⌘",
+        "ru": "⌘"
+      },
+      "value": {
+        "en": "",
+        "ru": ""
+      },
+      "shiftValue": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "code": "AltRight",
+      "btnName": {
+        "en": "Option",
+        "ru": "Option"
+      },
+      "secondBtnName": {
+        "en": "⌥",
+        "ru": "⌥"
+      },
+      "value": {
+        "en": "",
+        "ru": ""
+      },
+      "shiftValue": {
+        "en": "",
+        "ru": ""
+      }
+    },
+    {
+      "code": "ArrowLeft",
+      "btnName": {
+        "en": "⇦",
+        "ru": "⇦"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "⇦",
+        "ru": "⇦"
+      },
+      "shiftValue": {
+        "en": "⇦",
+        "ru": "⇦"
+      }
+    },
+    {
+      "code": "ArrowDown",
+      "btnName": {
+        "en": "⇩",
+        "ru": "⇩"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "⇩",
+        "ru": "⇩"
+      },
+      "shiftValue": {
+        "en": "⇩",
+        "ru": "⇩"
+      }
+    },
+    {
+      "code": "ArrowRight",
+      "btnName": {
+        "en": "⇨",
+        "ru": "⇨"
+      },
+      "secondBtnName": {
+        "en": "",
+        "ru": ""
+      },
+      "value": {
+        "en": "⇨",
+        "ru": "⇨"
+      },
+      "shiftValue": {
+        "en": "⇨",
+        "ru": "⇨"
+      }
+    }
+  ]
+  

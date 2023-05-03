@@ -66,6 +66,30 @@ function addTextField() {
 const keyboardSection = document.createElement('div');
 keyboardSection.classList.add('keyboard');
 
+function formButtonsArr() {
+  const buttons = document.querySelectorAll('.btn');
+  return buttons;
+}
+
+function changeBtnNamesCaps() {
+  const buttons = formButtonsArr();
+  if (capsLock === true) {
+    buttons.forEach((__, index) => {
+      if (btnValues[index].secondBtnName[lang] === '' && btnValues[index].shiftValue[lang] !== '') {
+        const mainValue = buttons[index].lastChild;
+        mainValue.textContent = btnValues[index].shiftValue[lang];
+      }
+    });
+  } else if (capsLock !== true) {
+    buttons.forEach((__, index) => {
+      if (btnValues[index].secondBtnName[lang] === '' && btnValues[index].shiftValue[lang] !== '') {
+        const mainValue = buttons[index].lastChild;
+        mainValue.textContent = btnValues[index].btnName[lang];
+      }
+    });
+  }
+}
+
 function createBtn(i, l) {
   const button = new Btn(
     btnValues[i].code,
@@ -74,16 +98,20 @@ function createBtn(i, l) {
     btnValues[i].secondBtnName[l],
   );
   const el = document.createElement('div');
+  const elValue = document.createElement('span');
+  elValue.classList.add('btnValue');
   const elSecondValue = document.createElement('span');
   el.classList.add('btn');
-  el.textContent = button.getName();
+  elValue.textContent = button.getName();
   el.setAttribute('id', button.getCode());
-  if (button.getName() === 'Caps Lock' && capsLock === true) {
-    el.classList.add('activeBtn');
-  }
   elSecondValue.textContent = button.getSecondName();
   elSecondValue.classList.add('btnSecondValue');
   el.prepend(elSecondValue);
+  el.append(elValue);
+  if (button.getName() === 'Caps Lock' && capsLock === true) {
+    el.classList.add('activeBtn');
+    changeBtnNamesCaps();
+  }
   if (el.textContent === 'Backspace') {
     el.classList.add('backspace');
   }
@@ -151,11 +179,6 @@ const clickSound = new Audio(keySound);
 field.addEventListener('keydown', (event) => event.preventDefault());
 field.addEventListener('keyup', (event) => event.preventDefault());
 
-function formButtonsArr() {
-  const buttons = document.querySelectorAll('.btn');
-  return buttons;
-}
-
 function backspaceBtnFunc(x) {
   clickSound.play();
   if (field.selectionStart === field.selectionEnd) {
@@ -189,6 +212,29 @@ function shiftBtnFunc(x, i, event) {
   }
 }
 
+function changeBtnNamesShift() {
+  const buttons = formButtonsArr();
+  if (leftShift === true || rightShift === true) {
+    buttons.forEach((__, index) => {
+      if (btnValues[index].shiftValue[lang] !== '') {
+        const secondValue = buttons[index].firstChild;
+        const mainValue = buttons[index].lastChild;
+        secondValue.textContent = secondValue.textContent === '' ? '' : btnValues[index].btnName[lang];
+        mainValue.textContent = btnValues[index].shiftValue[lang];
+      }
+    });
+  } else if (leftShift !== true && rightShift !== true && capsLock !== true) {
+    buttons.forEach((__, index) => {
+      if (btnValues[index].shiftValue[lang] !== '') {
+        const secondValue = buttons[index].firstChild;
+        const mainValue = buttons[index].lastChild;
+        secondValue.textContent = secondValue.textContent === '' ? '' : btnValues[index].secondBtnName[lang];
+        mainValue.textContent = btnValues[index].btnName[lang];
+      }
+    });
+  }
+}
+
 function capslockBtnFunc(x, i) {
   clickSound.play();
   field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang].toUpperCase() + field.value.split('').slice(field.selectionEnd).join('');
@@ -210,6 +256,7 @@ function typeOnKeyboard(event) {
       deleteBtnFunc(x);
     } else if (event.shiftKey
         && event.code === btnValues[i].code) {
+      changeBtnNamesShift();
       shiftBtnFunc(x, i, event);
     } else if (event.code === btnValues[i].code && capsLock === true && event.code !== 'CapsLock') {
       capslockBtnFunc(x, i);
@@ -226,12 +273,19 @@ function changeLanguage(event) {
     } else if (lang === 'ru') {
       lang = 'en';
     }
-    keyboardSection.innerHTML = '';
     document.querySelector('h1').remove();
     document.querySelector('h3').remove();
     document.querySelector('p').remove();
     createHeader();
-    fillKeyboard();
+    const buttons = formButtonsArr();
+    buttons.forEach((_, i) => {
+      changeBtnNamesCaps();
+      const mainValue = buttons[i].lastChild;
+      mainValue.textContent = btnValues[i].btnName[lang];
+      const secondValue = buttons[i].firstChild;
+      secondValue.textContent = btnValues[i].secondBtnName[lang];
+    });
+
     localStorage.setItem('language', lang);
   }
 }
@@ -249,8 +303,10 @@ document.addEventListener('keydown', (event) => {
         buttons[i].classList.toggle('activeBtn');
         if (capsLock === false) {
           capsLock = true;
+          changeBtnNamesCaps();
         } else {
           capsLock = false;
+          changeBtnNamesCaps();
         }
       }
       if (event.code === 'ControlLeft') {
@@ -280,9 +336,11 @@ function unpushBtn(event) {
     }
     if (event.code === 'ShiftLeft' && leftShift === true) {
       leftShift = false;
+      changeBtnNamesShift();
     }
     if (event.code === 'ShiftRight' && rightShift === true) {
       rightShift = false;
+      changeBtnNamesShift();
     }
     if (event.code === 'ControlLeft' && ctrl === true) {
       ctrl = false;
@@ -329,11 +387,18 @@ function pushButtonOnVirtualKeyboard(event) {
         capsLock = false;
         event.target.classList.remove('activeBtn');
       }
+      changeBtnNamesCaps();
     } else if (capsLock === true && event.target.textContent !== 'Caps Lock') {
       capslockBtnFunc(x, i);
     } else if (event.shiftKey && event.target.textContent !== 'Caps Lock') {
       shiftBtnFunc(x, i, event);
     } else if (capsLock !== true && event.target.textContent !== 'Caps Lock') {
+      if (event.target.id === 'ShiftLeft') {
+        leftShift = true;
+      } else if (event.target.id === 'ShiftRight') {
+        rightShift = true;
+      }
+      changeBtnNamesShift();
       regularBtnFunc(x, i);
     }
   } else if (event.target.classList.contains('btn')
@@ -347,6 +412,12 @@ keyboardSection.addEventListener('mouseup', (event) => {
   if (event.target.textContent !== 'Caps Lock') {
     event.target.classList.remove('activeBtn');
   }
+  if (event.target.id === 'ShiftLeft' && leftShift === true) {
+    leftShift = false;
+  } else if (event.target.id === 'ShiftRight' && rightShift === true) {
+    rightShift = false;
+  }
+  changeBtnNamesShift();
 });
 keyboardSection.addEventListener('mouseout', (event) => {
   if (event.target.textContent !== 'Caps Lock') {
