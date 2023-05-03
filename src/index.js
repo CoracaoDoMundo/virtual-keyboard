@@ -282,8 +282,12 @@ function changeLanguage(event) {
       changeBtnNamesCaps();
       const mainValue = buttons[i].lastChild;
       mainValue.textContent = btnValues[i].btnName[lang];
+      mainValue.classList.add('animated');
       const secondValue = buttons[i].firstChild;
       secondValue.textContent = btnValues[i].secondBtnName[lang];
+      secondValue.classList.add('animated');
+      mainValue.addEventListener('animationend', () => mainValue.classList.remove('animated'));
+      secondValue.addEventListener('animationend', () => secondValue.classList.remove('animated'));
     });
 
     localStorage.setItem('language', lang);
