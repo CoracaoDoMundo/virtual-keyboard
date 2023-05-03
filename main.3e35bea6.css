@@ -8,6 +8,7 @@ body {
   max-width: 1024px;
   width: 80%;
   row-gap: 15px;
+  overflow-y: hidden;
 }
 
 .textarea,
