@@ -40,6 +40,7 @@ body {
   border: 1px solid rgb(78, 44, 10);
   box-shadow: 6px 6px 8px -7px rgba(107, 63, 8, 1);
   border-radius: 5px;
+  z-index: 15;
 }
 
 .btn {
@@ -62,11 +63,21 @@ body {
   color: white;
 }
 
+.animated {
+  animation: disappearance 1s;
+}
+
 .btnSecondValue {
   position: absolute;
   left: 5%;
   top: 3%;
   font-size: 0.8em;
+}
+
+@keyframes disappearance {
+  to {
+    transform: rotateX(360deg);
+  }
 }
 
 .backspace,
@@ -97,7 +108,7 @@ body {
 
 .paw {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 80%;
   width: 15%;
   border: none;
