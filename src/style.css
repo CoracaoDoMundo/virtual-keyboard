@@ -23,6 +23,7 @@ body {
     ),
     url(./assets/img/corgi-background.jpeg);
   background-position: bottom left;
+  background-repeat: no-repeat;
   border: 1px solid orange;
   box-shadow: 6px 6px 8px -7px rgba(107, 63, 8, 1);
   border-radius: 5px;
