@@ -106,6 +106,9 @@ function createBtn(i, l) {
   el.setAttribute('id', button.getCode());
   elSecondValue.textContent = button.getSecondName();
   elSecondValue.classList.add('btnSecondValue');
+  const btnCover = document.createElement('div');
+  btnCover.classList.add('cover');
+  el.prepend(btnCover);
   el.prepend(elSecondValue);
   el.append(elValue);
   if (button.getName() === 'Caps Lock' && capsLock === true) {
@@ -261,7 +264,9 @@ function typeOnKeyboard(event) {
     } else if (event.code === btnValues[i].code && capsLock === true && event.code !== 'CapsLock') {
       capslockBtnFunc(x, i);
     } else if (event.code === btnValues[i].code && event.code !== 'CapsLock' && !event.shiftKey) {
-      regularBtnFunc(x, i);
+      if (event.key !== 'Meta' && event.key !== 'Alt' && event.key !== 'Control') {
+        regularBtnFunc(x, i);
+      }
     }
   });
 }
@@ -366,66 +371,66 @@ document.body.onmousedown = (e) => {
 
 function pushButtonOnVirtualKeyboard(event) {
   clickSound.play();
-  if (event.target.classList.contains('btn') && document.activeElement === document.body) {
+  if (event.target.classList.contains('cover') && document.activeElement === document.body) {
     field.focus();
   }
-  if (event.target.classList.contains('btn')
+  if (event.target.parentNode.classList.contains('btn')
   && document.activeElement === field
-  && event.target.textContent !== '^Control'
-  && event.target.textContent !== '⌥Option'
-  && event.target.textContent !== '⌘Command'
-  && event.target.textContent !== 'Fn') {
+  && event.target.parentNode.textContent !== '^Control'
+  && event.target.parentNode.textContent !== '⌥Option'
+  && event.target.parentNode.textContent !== '⌘Command'
+  && event.target.parentNode.textContent !== 'Fn') {
     const x = field.selectionStart + 1;
-    const i = btnValues.findIndex((el) => event.target.id === el.code);
-    event.target.classList.add('activeBtn');
-    if (event.target.textContent === 'DEL') {
+    const i = btnValues.findIndex((el) => event.target.parentNode.id === el.code);
+    event.target.parentNode.classList.add('activeBtn');
+    if (event.target.parentNode.textContent === 'DEL') {
       deleteBtnFunc(x);
-    } else if (event.target.textContent === 'Backspace') {
+    } else if (event.target.parentNode.textContent === 'Backspace') {
       backspaceBtnFunc(x);
-    } else if (event.target.textContent === 'Caps Lock') {
+    } else if (event.target.parentNode.textContent === 'Caps Lock') {
       clickSound.play();
       if (capsLock === false) {
         capsLock = true;
-        event.target.classList.add('activeBtn');
+        event.target.parentNode.classList.add('activeBtn');
       } else {
         capsLock = false;
-        event.target.classList.remove('activeBtn');
+        event.target.parentNode.classList.remove('activeBtn');
       }
       changeBtnNamesCaps();
-    } else if (capsLock === true && event.target.textContent !== 'Caps Lock') {
+    } else if (capsLock === true && event.target.parentNode.textContent !== 'Caps Lock') {
       capslockBtnFunc(x, i);
-    } else if (event.shiftKey && event.target.textContent !== 'Caps Lock') {
+    } else if (event.shiftKey && event.target.parentNode.textContent !== 'Caps Lock') {
       shiftBtnFunc(x, i, event);
-    } else if (capsLock !== true && event.target.textContent !== 'Caps Lock') {
-      if (event.target.id === 'ShiftLeft') {
+    } else if (capsLock !== true && event.target.parentNode.textContent !== 'Caps Lock') {
+      if (event.target.parentNode.id === 'ShiftLeft') {
         leftShift = true;
-      } else if (event.target.id === 'ShiftRight') {
+      } else if (event.target.parentNode.id === 'ShiftRight') {
         rightShift = true;
       }
       changeBtnNamesShift();
       regularBtnFunc(x, i);
     }
-  } else if (event.target.classList.contains('btn')
+  } else if (event.target.parentNode.classList.contains('btn')
   && document.activeElement === field) {
-    event.target.classList.add('activeBtn');
+    event.target.parentNode.classList.add('activeBtn');
   }
 }
 
 keyboardSection.addEventListener('mousedown', (event) => pushButtonOnVirtualKeyboard(event));
 keyboardSection.addEventListener('mouseup', (event) => {
-  if (event.target.textContent !== 'Caps Lock') {
-    event.target.classList.remove('activeBtn');
+  if (event.target.parentNode.textContent !== 'Caps Lock') {
+    event.target.parentNode.classList.remove('activeBtn');
   }
-  if (event.target.id === 'ShiftLeft' && leftShift === true) {
+  if (event.target.parentNode.id === 'ShiftLeft' && leftShift === true) {
     leftShift = false;
-  } else if (event.target.id === 'ShiftRight' && rightShift === true) {
+  } else if (event.target.parentNode.id === 'ShiftRight' && rightShift === true) {
     rightShift = false;
   }
   changeBtnNamesShift();
 });
 keyboardSection.addEventListener('mouseout', (event) => {
-  if (event.target.textContent !== 'Caps Lock') {
-    event.target.classList.remove('activeBtn');
+  if (event.target.parentNode.textContent !== 'Caps Lock') {
+    event.target.parentNode.classList.remove('activeBtn');
   }
 });
 
