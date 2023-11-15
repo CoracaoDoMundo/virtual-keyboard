@@ -18,9 +18,9 @@ function getLocalStorage() {
   const localValue = localStorage.getItem('language');
   if (localValue === undefined || localValue === null) {
     lang = 'en';
-  } else {
-    lang = localValue;
+    return;
   }
+  lang = localValue;
 }
 
 window.addEventListener('load', getLocalStorage);
@@ -75,14 +75,20 @@ function changeBtnNamesCaps() {
   const buttons = formButtonsArr();
   if (capsLock === true) {
     buttons.forEach((__, index) => {
-      if (btnValues[index].secondBtnName[lang] === '' && btnValues[index].shiftValue[lang] !== '') {
+      if (
+        btnValues[index].secondBtnName[lang] === '' &&
+        btnValues[index].shiftValue[lang] !== ''
+      ) {
         const mainValue = buttons[index].lastChild;
         mainValue.textContent = btnValues[index].shiftValue[lang];
       }
     });
   } else if (capsLock !== true) {
     buttons.forEach((__, index) => {
-      if (btnValues[index].secondBtnName[lang] === '' && btnValues[index].shiftValue[lang] !== '') {
+      if (
+        btnValues[index].secondBtnName[lang] === '' &&
+        btnValues[index].shiftValue[lang] !== ''
+      ) {
         const mainValue = buttons[index].lastChild;
         mainValue.textContent = btnValues[index].btnName[lang];
       }
@@ -95,7 +101,7 @@ function createBtn(i, l) {
     btnValues[i].code,
     btnValues[i].btnName[l],
     btnValues[i].value[l],
-    btnValues[i].secondBtnName[l],
+    btnValues[i].secondBtnName[l]
   );
   const el = document.createElement('div');
   const elValue = document.createElement('span');
@@ -185,10 +191,16 @@ field.addEventListener('keyup', (event) => event.preventDefault());
 function backspaceBtnFunc(x) {
   clickSound.play();
   if (field.selectionStart === field.selectionEnd) {
-    field.value = field.value.split('').slice(0, field.selectionStart - 1).join('') + field.value.split('').slice(field.selectionStart).join('');
+    field.value =
+      field.value
+        .split('')
+        .slice(0, field.selectionStart - 1)
+        .join('') + field.value.split('').slice(field.selectionStart).join('');
     field.selectionEnd = x - 2;
   } else if (field.selectionStart !== field.selectionEnd) {
-    field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionEnd).join('');
+    field.value =
+      field.value.split('').slice(0, field.selectionStart).join('') +
+      field.value.split('').slice(field.selectionEnd).join('');
     field.selectionEnd = x - 1;
   }
 }
@@ -196,10 +208,17 @@ function backspaceBtnFunc(x) {
 function deleteBtnFunc(x) {
   clickSound.play();
   if (field.selectionStart === field.selectionEnd) {
-    field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionStart + 1).join('');
+    field.value =
+      field.value.split('').slice(0, field.selectionStart).join('') +
+      field.value
+        .split('')
+        .slice(field.selectionStart + 1)
+        .join('');
     field.selectionEnd = x - 1;
   } else if (field.selectionStart !== field.selectionEnd) {
-    field.value = field.value.split('').slice(0, field.selectionStart).join('') + field.value.split('').slice(field.selectionEnd).join('');
+    field.value =
+      field.value.split('').slice(0, field.selectionStart).join('') +
+      field.value.split('').slice(field.selectionEnd).join('');
     field.selectionEnd = x - 1;
   }
 }
@@ -207,10 +226,19 @@ function deleteBtnFunc(x) {
 function shiftBtnFunc(x, i, event) {
   clickSound.play();
   if (field.selectionStart !== field.selectionEnd && event.key !== 'Shift') {
-    field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].shiftValue[lang] + field.value.split('').slice(field.selectionEnd).join('');
+    field.value =
+      field.value.split('').slice(0, field.selectionStart).join('') +
+      btnValues[i].shiftValue[lang] +
+      field.value.split('').slice(field.selectionEnd).join('');
     field.selectionEnd = x;
-  } else if (field.selectionStart === field.selectionEnd && event.key !== 'Shift') {
-    field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].shiftValue[lang] + field.value.split('').slice(field.selectionEnd).join('');
+  } else if (
+    field.selectionStart === field.selectionEnd &&
+    event.key !== 'Shift'
+  ) {
+    field.value =
+      field.value.split('').slice(0, field.selectionStart).join('') +
+      btnValues[i].shiftValue[lang] +
+      field.value.split('').slice(field.selectionEnd).join('');
     field.selectionEnd = x;
   }
 }
@@ -222,7 +250,8 @@ function changeBtnNamesShift() {
       if (btnValues[index].shiftValue[lang] !== '') {
         const secondValue = buttons[index].firstChild;
         const mainValue = buttons[index].lastChild;
-        secondValue.textContent = secondValue.textContent === '' ? '' : btnValues[index].btnName[lang];
+        secondValue.textContent =
+          secondValue.textContent === '' ? '' : btnValues[index].btnName[lang];
         mainValue.textContent = btnValues[index].shiftValue[lang];
       }
     });
@@ -231,22 +260,29 @@ function changeBtnNamesShift() {
       if (btnValues[index].shiftValue[lang] !== '') {
         const secondValue = buttons[index].firstChild;
         const mainValue = buttons[index].lastChild;
-        secondValue.textContent = secondValue.textContent === '' ? '' : btnValues[index].secondBtnName[lang];
+        secondValue.textContent =
+          secondValue.textContent === ''
+            ? ''
+            : btnValues[index].secondBtnName[lang];
         mainValue.textContent = btnValues[index].btnName[lang];
       }
     });
   }
 }
 
-function capslockBtnFunc(x, i) {
+function capsLockBtnFunc(x, i) {
   clickSound.play();
-  field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang].toUpperCase() + field.value.split('').slice(field.selectionEnd).join('');
+  field.value = field.value.split('').slice(0, field.selectionStart).join('')
+  + btnValues[i].value[lang].toUpperCase()
+  + field.value.split('').slice(field.selectionEnd).join('');
   field.selectionEnd = x;
 }
 
 function regularBtnFunc(x, i) {
   clickSound.play();
-  field.value = field.value.split('').slice(0, field.selectionStart).join('') + btnValues[i].value[lang] + field.value.split('').slice(field.selectionEnd).join('');
+  field.value = field.value.split('').slice(0, field.selectionStart).join('')
+    + btnValues[i].value[lang]
+    + field.value.split('').slice(field.selectionEnd).join('');
   field.selectionEnd = x;
 }
 
@@ -262,15 +298,103 @@ function btnToLeft() {
   field.selectionEnd = field.selectionStart;
 }
 
+function countPositions() {
+  const textInLines = field.value.split('\n');
+  const lengthsArr = textInLines.map((el) => el.length);
+  const position = field.selectionStart;
+  const textBeforeCursor = field.value.substring(0, position);
+  const activeLine = textBeforeCursor.split('\n').length - 1;
+
+  const positionsFirstInLine = lengthsArr.reduce((acc, current) => {
+    const sum = (acc.length > 0 ? acc[acc.length - 1] : 0) + current + 1;
+    return [...acc, sum];
+  }, []);
+
+  let positionSymbolInLine = position - lengthsArr.reduce((acc, val, i) => {
+    if (i <= activeLine - 1) {
+      acc += val + 1;
+    }
+    return acc;
+  }, 0);
+
+  if ((positionsFirstInLine.filter((el) => el === position)).length) {
+    positionSymbolInLine = 0;
+  }
+
+  return {
+    position,
+    lengthsArr,
+    activeLine,
+    positionSymbolInLine,
+  };
+}
+
 function btnToUp() {
   clickSound.play();
-  field.selectionStart = 0;
+  const {
+    position,
+    lengthsArr,
+    activeLine,
+    positionSymbolInLine,
+  } = countPositions();
+  let newPosition;
+
+  if (activeLine === 0) {
+    newPosition = 0;
+  } else if (positionSymbolInLine >= lengthsArr[activeLine - 1]) {
+    newPosition = lengthsArr.reduce((acc, val, i) => {
+      if (i <= activeLine - 1) {
+        acc += val + 1;
+      }
+      return acc;
+    }, 0) - 1;
+  } else if (positionSymbolInLine === 0) {
+    newPosition = position - lengthsArr[activeLine - 1] - 1;
+  } else {
+    newPosition = lengthsArr.reduce((acc, val, i) => {
+      if (i <= activeLine - 2) {
+        acc += val + 1;
+      }
+      return acc;
+    }, 0) + positionSymbolInLine;
+  }
+
+  field.selectionStart = newPosition;
   field.selectionEnd = field.selectionStart;
 }
 
 function btnToDown() {
   clickSound.play();
-  field.selectionStart = field.value.length;
+  const {
+    position,
+    lengthsArr,
+    activeLine,
+    positionSymbolInLine,
+  } = countPositions();
+  let newPosition;
+
+  if (activeLine === lengthsArr.length - 1) {
+    newPosition = field.value.length;
+  } else if (positionSymbolInLine >= lengthsArr[activeLine + 1]) {
+    newPosition = lengthsArr.reduce((acc, val, i) => {
+      if (i <= activeLine + 1) {
+        acc += val + 1;
+      }
+      return acc;
+    }, 0) - 1;
+  } else if (positionSymbolInLine === 0) {
+    newPosition = position + lengthsArr[activeLine] + 1;
+  } else {
+    newPosition = lengthsArr.reduce((acc, val, i) => {
+      if (i <= activeLine) {
+        acc += val + 1;
+      }
+      return acc;
+    }, 0) + positionSymbolInLine;
+  }
+
+  field.selectionStart = newPosition;
+  field.selectionEnd = field.selectionStart;
 }
 
 function typeOnKeyboard(event) {
@@ -280,7 +404,10 @@ function typeOnKeyboard(event) {
       backspaceBtnFunc(x);
     } else if (event.code === btnValues[i].code && event.code === 'Delete') {
       deleteBtnFunc(x);
-    } else if (event.code === btnValues[i].code && event.code === 'ArrowRight') {
+    } else if (
+      event.code === btnValues[i].code &&
+      event.code === 'ArrowRight'
+    ) {
       btnToRight();
     } else if (event.code === btnValues[i].code && event.code === 'ArrowLeft') {
       btnToLeft();
@@ -288,14 +415,25 @@ function typeOnKeyboard(event) {
       btnToUp();
     } else if (event.code === btnValues[i].code && event.code === 'ArrowDown') {
       btnToDown();
-    } else if (event.shiftKey
-        && event.code === btnValues[i].code) {
+    } else if (event.shiftKey && event.code === btnValues[i].code) {
       changeBtnNamesShift();
       shiftBtnFunc(x, i, event);
-    } else if (event.code === btnValues[i].code && capsLock === true && event.code !== 'CapsLock') {
-      capslockBtnFunc(x, i);
-    } else if (event.code === btnValues[i].code && event.code !== 'CapsLock' && !event.shiftKey) {
-      if (event.key !== 'Meta' && event.key !== 'Alt' && event.key !== 'Control') {
+    } else if (
+      event.code === btnValues[i].code &&
+      capsLock === true &&
+      event.code !== 'CapsLock'
+    ) {
+      capsLockBtnFunc(x, i);
+    } else if (
+      event.code === btnValues[i].code &&
+      event.code !== 'CapsLock' &&
+      !event.shiftKey
+    ) {
+      if (
+        event.key !== 'Meta' &&
+        event.key !== 'Alt' &&
+        event.key !== 'Control'
+      ) {
         regularBtnFunc(x, i);
       }
     }
@@ -322,8 +460,12 @@ function changeLanguage(event) {
       const secondValue = buttons[i].firstChild;
       secondValue.textContent = btnValues[i].secondBtnName[lang];
       secondValue.classList.add('animated');
-      mainValue.addEventListener('animationend', () => mainValue.classList.remove('animated'));
-      secondValue.addEventListener('animationend', () => secondValue.classList.remove('animated'));
+      mainValue.addEventListener('animationend', () =>
+        mainValue.classList.remove('animated')
+      );
+      secondValue.addEventListener('animationend', () =>
+        secondValue.classList.remove('animated')
+      );
     });
 
     localStorage.setItem('language', lang);
@@ -388,7 +530,9 @@ function unpushBtn(event) {
   });
 }
 
-document.addEventListener('keyup', (event) => { unpushBtn(event); });
+document.addEventListener('keyup', (event) => {
+  unpushBtn(event);
+});
 
 // KEYBOARD FUNCTIONALITY BY REAL KEYBOARD USING END //
 
@@ -402,17 +546,24 @@ document.body.onmousedown = (e) => {
 
 function pushButtonOnVirtualKeyboard(event) {
   clickSound.play();
-  if (event.target.classList.contains('cover') && document.activeElement === document.body) {
+  if (
+    event.target.classList.contains('cover') &&
+    document.activeElement === document.body
+  ) {
     field.focus();
   }
-  if (event.target.parentNode.classList.contains('btn')
-  && document.activeElement === field
-  && event.target.parentNode.textContent !== '^Control'
-  && event.target.parentNode.textContent !== '⌥Option'
-  && event.target.parentNode.textContent !== '⌘Command'
-  && event.target.parentNode.textContent !== 'Fn') {
+  if (
+    event.target.parentNode.classList.contains('btn') &&
+    document.activeElement === field &&
+    event.target.parentNode.textContent !== '^Control' &&
+    event.target.parentNode.textContent !== '⌥Option' &&
+    event.target.parentNode.textContent !== '⌘Command' &&
+    event.target.parentNode.textContent !== 'Fn'
+  ) {
     const x = field.selectionStart + 1;
-    const i = btnValues.findIndex((el) => event.target.parentNode.id === el.code);
+    const i = btnValues.findIndex(
+      (el) => event.target.parentNode.id === el.code
+    );
     event.target.parentNode.classList.add('activeBtn');
     if (event.target.parentNode.textContent === 'DEL') {
       deleteBtnFunc(x);
@@ -436,11 +587,20 @@ function pushButtonOnVirtualKeyboard(event) {
         event.target.parentNode.classList.remove('activeBtn');
       }
       changeBtnNamesCaps();
-    } else if (capsLock === true && event.target.parentNode.textContent !== 'Caps Lock') {
-      capslockBtnFunc(x, i);
-    } else if (event.shiftKey && event.target.parentNode.textContent !== 'Caps Lock') {
+    } else if (
+      capsLock === true &&
+      event.target.parentNode.textContent !== 'Caps Lock'
+    ) {
+      capsLockBtnFunc(x, i);
+    } else if (
+      event.shiftKey &&
+      event.target.parentNode.textContent !== 'Caps Lock'
+    ) {
       shiftBtnFunc(x, i, event);
-    } else if (capsLock !== true && event.target.parentNode.textContent !== 'Caps Lock') {
+    } else if (
+      capsLock !== true &&
+      event.target.parentNode.textContent !== 'Caps Lock'
+    ) {
       if (event.target.parentNode.id === 'ShiftLeft') {
         leftShift = true;
       } else if (event.target.parentNode.id === 'ShiftRight') {
@@ -449,20 +609,27 @@ function pushButtonOnVirtualKeyboard(event) {
       changeBtnNamesShift();
       regularBtnFunc(x, i);
     }
-  } else if (event.target.parentNode.classList.contains('btn')
-  && document.activeElement === field) {
+  } else if (
+    event.target.parentNode.classList.contains('btn') &&
+    document.activeElement === field
+  ) {
     event.target.parentNode.classList.add('activeBtn');
   }
 }
 
-keyboardSection.addEventListener('mousedown', (event) => pushButtonOnVirtualKeyboard(event));
+keyboardSection.addEventListener('mousedown', (event) =>
+  pushButtonOnVirtualKeyboard(event)
+);
 keyboardSection.addEventListener('mouseup', (event) => {
   if (event.target.parentNode.textContent !== 'Caps Lock') {
     event.target.parentNode.classList.remove('activeBtn');
   }
   if (event.target.parentNode.id === 'ShiftLeft' && leftShift === true) {
     leftShift = false;
-  } else if (event.target.parentNode.id === 'ShiftRight' && rightShift === true) {
+  } else if (
+    event.target.parentNode.id === 'ShiftRight' &&
+    rightShift === true
+  ) {
     rightShift = false;
   }
   changeBtnNamesShift();
