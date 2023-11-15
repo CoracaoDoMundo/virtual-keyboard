@@ -15,9 +15,5 @@ module.exports = {
   rules: {
     "prettier/prettier": "error",
     "import/extensions": ["error", "always", { ignorePackages: true }],
-    // 'no-plusplus': 'off',
-    // 'eol-line': 'off',
-    // 'prefer-destructuring': 'off',
-    // 'no-alert': 'off',
   },
 };
