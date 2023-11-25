@@ -1,32 +1,40 @@
 export default class Btn {
-  constructor(code, btnName, value, secondBtnName) {
+  constructor(code, btnName, secondBtnName, value, shiftValue) {
     this.code = code;
     this.btnName = btnName;
-    this.value = value;
     this.secondBtnName = secondBtnName;
+    this.value = value;
+    this.shiftValue = shiftValue;
   }
 
   getCode() {
     return this.code;
   }
 
-  setValue(value) {
-    this.value = value;
+  getName(lang) {
+    if (lang === "en") {
+      return this.btnName.en;
+    }
+    return this.btnName.ru;
   }
 
-  getName() {
-    return this.btnName;
+  getValue(caps, lang) {
+    if (caps === true && lang === "ru") {
+      return this.shiftValue.ru;
+    }
+    if (caps === false && lang === "ru") {
+      return this.value.ru;
+    }
+    if (caps === true && lang === "en") {
+      return this.shiftValue.en;
+    }
+    return this.value.en;
   }
 
-  getValue() {
-    return this.value;
-  }
-
-  setSecondBtnName(secondBtnName) {
-    this.secondBtnName = secondBtnName;
-  }
-
-  getSecondName() {
-    return this.secondBtnName;
+  getSecondName(lang) {
+    if (lang === "en") {
+      return this.secondBtnName.en;
+    }
+    return this.secondBtnName.ru;
   }
 }
