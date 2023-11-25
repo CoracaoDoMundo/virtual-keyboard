@@ -530,7 +530,7 @@ document.addEventListener("keyup", (event) => {
 // KEYBOARD INTERFACE FUNCTIONALITY START //
 
 document.body.onmousedown = (e) => {
-  if (document.activeElement === field && e.target.classList.contains("btn")) {
+  if (document.activeElement === field && e.target.className !== "textarea") {
     e.preventDefault();
   }
 };
@@ -539,13 +539,6 @@ function pushButtonOnVirtualKeyboard(event) {
   const parentNodeId = event.target.parentNode.id;
   const parentNodeText = event.target.parentNode.textContent;
 
-  clickSound.play();
-  if (
-    event.target.classList.contains("cover") &&
-    document.activeElement === document.body
-  ) {
-    field.focus();
-  }
   if (
     event.target.parentNode.classList.contains("btn") &&
     document.activeElement === field &&
