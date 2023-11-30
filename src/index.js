@@ -76,25 +76,25 @@ function formButtonsArr() {
 function changeBtnNamesCaps() {
   const buttons = formButtonsArr();
   if (capsLock === true) {
-    buttons.forEach((__, index) => {
+    for (let i = 0; i < buttons.length; i += 1) {
       if (
-        btnValues[index].secondBtnName[lang] === "" &&
-        btnValues[index].shiftValue[lang] !== ""
+        btnValues[i].secondBtnName[lang] === "" &&
+        btnValues[i].shiftValue[lang] !== ""
       ) {
-        const mainValue = buttons[index].lastChild;
-        mainValue.textContent = btnValues[index].shiftValue[lang];
+        const mainValue = buttons[i].lastChild;
+        mainValue.textContent = btnValues[i].shiftValue[lang];
       }
-    });
-  } else if (capsLock !== true) {
-    buttons.forEach((__, index) => {
-      if (
-        btnValues[index].secondBtnName[lang] === "" &&
-        btnValues[index].shiftValue[lang] !== ""
-      ) {
-        const mainValue = buttons[index].lastChild;
-        mainValue.textContent = btnValues[index].btnName[lang];
-      }
-    });
+    }
+    return;
+  }
+  for (let i = 0; i < buttons.length; i += 1) {
+    if (
+      btnValues[i].secondBtnName[lang] === "" &&
+      btnValues[i].shiftValue[lang] !== ""
+    ) {
+      const mainValue = buttons[i].lastChild;
+      mainValue.textContent = btnValues[i].btnName[lang];
+    }
   }
 }
 
@@ -252,27 +252,25 @@ function shiftBtnFunc(x, i, event) {
 function changeBtnNamesShift() {
   const buttons = formButtonsArr();
   if (leftShift === true || rightShift === true) {
-    buttons.forEach((__, index) => {
-      if (btnValues[index].shiftValue[lang] !== "") {
-        const secondValue = buttons[index].firstChild;
-        const mainValue = buttons[index].lastChild;
+    for (let i = 0; i < buttons.length; i += 1) {
+      if (btnValues[i].shiftValue[lang] !== "") {
+        const secondValue = buttons[i].firstChild;
+        const mainValue = buttons[i].lastChild;
         secondValue.textContent =
-          secondValue.textContent === "" ? "" : btnValues[index].btnName[lang];
-        mainValue.textContent = btnValues[index].shiftValue[lang];
+          secondValue.textContent === "" ? "" : btnValues[i].btnName[lang];
+        mainValue.textContent = btnValues[i].shiftValue[lang];
       }
-    });
-  } else if (leftShift !== true && rightShift !== true && capsLock !== true) {
-    buttons.forEach((__, index) => {
-      if (btnValues[index].shiftValue[lang] !== "") {
-        const secondValue = buttons[index].firstChild;
-        const mainValue = buttons[index].lastChild;
-        secondValue.textContent =
-          secondValue.textContent === ""
-            ? ""
-            : btnValues[index].secondBtnName[lang];
-        mainValue.textContent = btnValues[index].btnName[lang];
-      }
-    });
+    }
+    return;
+  }
+  for (let i = 0; i < buttons.length; i += 1) {
+    if (btnValues[i].shiftValue[lang] !== "") {
+      const secondValue = buttons[i].firstChild;
+      const mainValue = buttons[i].lastChild;
+      secondValue.textContent =
+        secondValue.textContent === "" ? "" : btnValues[i].secondBtnName[lang];
+      mainValue.textContent = btnValues[i].btnName[lang];
+    }
   }
 }
 
@@ -390,7 +388,7 @@ function btnToDown() {
 
 function typeOnKeyboard(event) {
   const x = field.selectionStart + 1;
-  btnValues.forEach((_, i) => {
+  for (let i = 0; i < btnValues.length; i += 1) {
     if (event.code === btnValues[i].code && event.code === "Backspace") {
       backspaceBtnFunc(x);
     } else if (event.code === btnValues[i].code && event.code === "Delete") {
@@ -428,7 +426,7 @@ function typeOnKeyboard(event) {
         regularBtnFunc(x, i);
       }
     }
-  });
+  }
 }
 
 function changeLanguage(event) {
@@ -443,7 +441,7 @@ function changeLanguage(event) {
     document.querySelector("p").remove();
     createHeader();
     const buttons = formButtonsArr();
-    buttons.forEach((_, i) => {
+    for (let i = 0; i < buttons.length; i += 1) {
       changeBtnNamesCaps();
       const mainValue = buttons[i].lastChild;
       mainValue.textContent = btnValues[i].btnName[lang];
@@ -457,8 +455,7 @@ function changeLanguage(event) {
       secondValue.addEventListener("animationend", () =>
         secondValue.classList.remove("animated")
       );
-    });
-
+    }
     localStorage.setItem("language", lang);
   }
 }
@@ -468,7 +465,7 @@ document.addEventListener("keydown", (event) => {
   if (document.activeElement !== field) {
     field.focus();
   } else if (document.activeElement === field) {
-    buttons.forEach((_, i) => {
+    for (let i = 0; i < buttons.length; i += 1) {
       if (event.code === buttons[i].id && event.code !== "CapsLock") {
         buttons[i].classList.add("activeBtn");
       } else if (event.code === buttons[i].id && event.code === "CapsLock") {
@@ -490,7 +487,7 @@ document.addEventListener("keydown", (event) => {
       } else if (event.code === "ShiftRight") {
         rightShift = true;
       }
-    });
+    }
     typeOnKeyboard(event);
   }
   changeLanguage(event);
@@ -498,7 +495,7 @@ document.addEventListener("keydown", (event) => {
 
 function unpushBtn(event) {
   const buttons = formButtonsArr();
-  buttons.forEach((_, i) => {
+  for (let i = 0; i < buttons.length; i += 1) {
     if (event.code !== "CapsLock") {
       if (capsLock === false) {
         buttons[i].classList.remove("activeBtn");
@@ -518,7 +515,7 @@ function unpushBtn(event) {
     if (event.code === "ControlLeft" && ctrl === true) {
       ctrl = false;
     }
-  });
+  }
 }
 
 document.addEventListener("keyup", (event) => {
