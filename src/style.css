@@ -1,0 +1,143 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-family: 'Alumni Sans';
+  align-items: center;
+  color: rgb(67, 37, 9);
+  max-width: 1024px;
+  width: 80%;
+  row-gap: 15px;
+  overflow-y: hidden;
+}
+
+.textarea,
+.keyboard {
+  width: 80%;
+}
+
+.textarea {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.527),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(./assets/img/corgi-background.jpeg);
+  background-position: bottom left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid orange;
+  box-shadow: 6px 6px 8px -7px rgba(107, 63, 8, 1);
+  border-radius: 5px;
+  outline: navajowhite;
+  resize: none;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  row-gap: 5px;
+  padding: 7px;
+  height: 250px;
+  border: 1px solid rgb(78, 44, 10);
+  box-shadow: 6px 6px 8px -7px rgba(107, 63, 8, 1);
+  border-radius: 5px;
+  z-index: 15;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 6%;
+  height: 45px;
+  border: 0.1px solid orange;
+  box-shadow: 1px 1px 2px 0px rgba(107, 63, 8, 1);
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  z-index: 25;
+  position: absolute;
+}
+
+.activeBtn {
+  background: orange;
+  border: 0.5px solid orange;
+  box-shadow: 0.3px 0.3px 1px 0px rgba(107, 63, 8, 1);
+  color: white;
+}
+
+.animated {
+  animation: disappearance 1s;
+}
+
+.btnSecondValue {
+  position: absolute;
+  left: 5%;
+  top: 3%;
+  font-size: 0.8em;
+}
+
+@keyframes disappearance {
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+.backspace,
+.caps,
+.shift {
+  width: 15%;
+}
+
+.tab {
+  width: 8%;
+}
+
+.del {
+  width: 7%;
+}
+
+.enter {
+  width: 13%;
+}
+
+.cmnd {
+  width: 9%;
+}
+
+.space {
+  width: 35%;
+}
+
+.paw {
+  position: absolute;
+  bottom: 10px;
+  left: 80%;
+  width: 15%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  filter: drop-shadow(2px 5px 5px rgba(107, 63, 8, 0.4));
+  animation: beat 1s infinite alternate;
+  transform-origin: center;
+}
+
+.paw:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+@keyframes beat {
+  to {
+    transform: scale(1.05);
+  }
+}
