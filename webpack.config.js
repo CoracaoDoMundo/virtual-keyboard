@@ -10,6 +10,7 @@ module.exports = {
     clean: true,
     filename: "index.[contenthash:8].js",
   },
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -52,6 +53,11 @@ module.exports = {
         generator: {
           filename: path.join("fonts", "[name].[contenthash:8][ext]"),
         },
+      },
+      {
+        test: /\.js$/,
+        enforce: "pre",
+        use: ["source-map-loader"],
       },
     ],
   },
