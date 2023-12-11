@@ -6,7 +6,8 @@ Functionality:
 - type on russian and english languages;
 - type in uppercase and lowercase;
 - animation on active buttons and during the language changing;
-- sound effects during the typing process.
+- sound effects during the typing process;
+- dog paw decorative element.
 
 Deploy: [link](https://coracaodomundo.github.io/virtual-keyboard/)
 
